@@ -5,13 +5,13 @@ var template_button = document.createElement("template"); //<template> </templat
 template_button.innerHTML = `
 <style>
     .button {
-        box-shadow: 1px 1px rgba(10, 23, 34, 0.3);
-        padding: 20px; 
+        box-shadow: 2px 2px 10px rgba(10, 23, 34, 0.2);
+        padding: 15px; 
         background-color:#F3CA40;
         border-radius: 20px;
         text-align: center;
         color: #151515;
-        max-width: 7rem;
+        max-width: 10rem;
 
     }
     .button_title {
