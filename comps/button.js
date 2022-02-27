@@ -12,12 +12,13 @@ template_button.innerHTML = `
         text-align: center;
         color: #151515;
         max-width: 10rem;
-
     }
     .button_title {
-        // font-weight:lighter; 
+        font-family: Roboto, Helvetica, Arial, sans-serif;
         font-size: 24px;
-
+    }
+    .button:hover {
+        background-color: #DFB62E;
     }
 
 </style>
