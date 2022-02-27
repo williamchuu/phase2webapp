@@ -35,8 +35,8 @@ class TheVector extends HTMLElement {
     connectedCallback(){
         this.shadowRoot.appendChild(template_vector.content.cloneNode(true)); //use the template to make a clone
         this.shadowRoot.querySelector("#icon").innerText = this.getAttribute("icon");
-        if(this.getAttribute("icon")){
-            document.querySelector("#vectors").changeIcon(`./imgs/${this.getAttribute("icon")}.svg`);
+        if(this.getAttribute(".icon")){
+            document.querySelector(".icon").changeIcon(`./imgs/${this.getAttribute("icon")}.svg`);
 
         }
     }

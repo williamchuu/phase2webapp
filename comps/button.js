@@ -22,8 +22,7 @@ template_button.innerHTML = `
 
 </style>
 <div class="button">
-    <div class="button_title"> Submit
-    </div>
+    <div class="button_title"></div>
 </div>
 `;
 
@@ -44,9 +43,22 @@ class TheButton extends HTMLElement {
         if (this.getAttribute("button_title")) {
             this.shadowRoot.querySelector(".button_title").innerText = this.getAttribute("button_title");
         }
+        if (this.getAttribute("button_title") === "Start!") {
+            this.shadowRoot.querySelector(".button").onclick = () => this.startQuiz();       
+        }
+        else if (this.getAttribute("button_title") === "Submit") {
+            this.shadowRoot.querySelector(".button").onclick = () => this.submitAnswer();
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
+    startQuiz() {
+        alert("start button works :)");
+    }
+
+    submitAnswer() {
+        alert("submit button works :D");
+    }
 }
 
 //MUST HAVE - define the tag for the custom elements
