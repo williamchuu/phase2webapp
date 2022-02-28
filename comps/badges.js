@@ -12,8 +12,8 @@ template_badge.innerHTML = `
     } */
 
     #badge-container, #badge-front, #badge-back {
-        width: 10rem;
-        height: 4rem;
+        width: 7rem;
+        height: 6rem;
     }
 
     #badge {
