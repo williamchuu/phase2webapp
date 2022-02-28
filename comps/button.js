@@ -15,9 +15,13 @@ template_button.innerHTML = `
 
     }
     .button_title {
-        // font-weight:lighter; 
+        font-family: Roboto, Helvetica, Arial, sans-serif;
         font-size: 24px;
 
+    }
+
+    .button:hover {
+        background-color: #CAA21D;
     }
 
 </style>
