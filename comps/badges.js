@@ -7,7 +7,7 @@ template_badge.innerHTML = `
     #badge-container {
         perspective: 1000;
     }
-    /* hover #badge-container:hover #badge, #badge-container.hover #badge {
+    /* for hover effect (don't use) #badge-container:hover #badge, #badge-container.hover #badge {
         transform: rotateY(180deg);
     } */
 
@@ -79,7 +79,6 @@ class TheBadge extends HTMLElement {
            transform: rotateY(360deg);
            `
         }
-    
     }
 
     flipBadgeFront() {
