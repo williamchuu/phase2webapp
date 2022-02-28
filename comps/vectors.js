@@ -34,22 +34,7 @@ class TheVector extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback() {
         this.shadowRoot.appendChild(template_vector.content.cloneNode(true)); //use the template to make a clone
- 
-        if (this.getAttribute("pic") === "jar") {
-            document.querySelector(".icons").changeIcon(`./img/${this.getAttribute("pic")}.svg`);
-        }
-        else if (this.getAttribute("pic") === "salad") {
-            document.querySelector(".icons").changeIcon(`./img/${this.getAttribute("pic")}.svg`);
-        }
-        else if (this.getAttribute("pic") === "landfill") {
-            document.querySelector(".icons").changeIcon(`./img/${this.getAttribute("pic")}.svg`);
-        }
-        else if (this.getAttribute("pic") === "restaurant") {
-            document.querySelector(".icons").changeIcon(`./img/${this.getAttribute("pic")}.svg`);
-        } 
-        // aaaaaaaaaaaaaaaaaaa
 
-        
         if (this.getAttribute("pic") === "jar") {
             document.querySelector(".jaricon").changeIcon(`./img/${this.getAttribute("pic")}.svg`);
         }
