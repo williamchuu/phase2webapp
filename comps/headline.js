@@ -11,7 +11,7 @@ template_headline.innerHTML = `
         width: 20rem;
     }
     .headline img {
-        width: 20rem;
+        width: 18rem;
     }
     .headline_text {
         font-weight: bold;
@@ -20,7 +20,7 @@ template_headline.innerHTML = `
 
 </style>
 <div class="headline">
-    <img src="img/boy.svg">
+    <img src="img/boy_eat.svg">
     <div class ="headline_text">
     <h1>Hello World</h1>
     </div>
