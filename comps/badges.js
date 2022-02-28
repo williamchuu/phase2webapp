@@ -7,7 +7,7 @@ template_badge.innerHTML = `
     #badge-container {
         perspective: 1000;
     }
-    /* hover #badge-container:hover #badge, #badge-container.hover #badge {
+    /* for hover effect (don't use) #badge-container:hover #badge, #badge-container.hover #badge {
         transform: rotateY(180deg);
     } */
 
@@ -31,9 +31,6 @@ template_badge.innerHTML = `
 
     #badge-back {
         transform: rotateY(180deg);
-    }
-    #hello {
-        display:none;
     }
 </style>
 
@@ -72,26 +69,26 @@ class TheBadge extends HTMLElement {
     //To-do - CREATE THE FUNCTIONALITIES HERE!
 
     updateBadgeState(){
+        if(this.badge === 0) {
+            this.shadowRoot.querySelector('#badge').style.cssText= `
+            transform: rotateY(180deg);
+            `
+        }
         if(this.badge === 1) {
            this.shadowRoot.querySelector('#badge').style.cssText= `
            transform: rotateY(360deg);
            `
-           }
-           if(this.badge === 0) {
-          this.shadowRoot.querySelector('#badge').style.cssText= `
-          transform: rotateY(180deg);
-          `
-      }
+        }
     }
 
     flipBadgeFront() {
-         this.badge = this.badge = 0;
-         this.updateBadgeState();
-      }
+        this.badge = this.badge = 0;
+        this.updateBadgeState();
+    }
     flipBadgeBack() {
-         this.badge = this.badge = 1;
-         this.updateBadgeState();
-      }
+        this.badge = this.badge = 1;
+        this.updateBadgeState();
+    }
 
     changeBadge(img='./img/badge_locked.svg') {
         this.shadowRoot.querySelector("#badge-front > img").src = img;
