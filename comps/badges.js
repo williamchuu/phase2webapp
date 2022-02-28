@@ -7,7 +7,7 @@ template_badge.innerHTML = `
     #badge-container {
         perspective: 1000;
     }
-    /* #badge-container:hover #badge, #badge-container.hover #badge {
+    /* hover #badge-container:hover #badge, #badge-container.hover #badge {
         transform: rotateY(180deg);
     } */
 
@@ -72,28 +72,24 @@ class TheBadge extends HTMLElement {
     //To-do - CREATE THE FUNCTIONALITIES HERE!
 
     updateBadgeState(){
-        if(this.badge === 2) {
+        if(this.badge === 1) {
            this.shadowRoot.querySelector('#badge').style.cssText= `
-           transform: rotateY(180deg);
+           transform: rotateY(360deg);
            `
            }
-           if(this.badge === 1) {
+           if(this.badge === 0) {
           this.shadowRoot.querySelector('#badge').style.cssText= `
           transform: rotateY(180deg);
           `
-          this.shadowRoot.querySelector('#hello').style.cssText= `
-          display:none;
-          `
-          this.shadowRoot.getElementById("#badge").classList.add('#hello');
       }
     }
 
-      flipBadgeFront() {
-         this.badge = this.badge = 1;
+    flipBadgeFront() {
+         this.badge = this.badge = 0;
          this.updateBadgeState();
       }
-      flipBadgeBack() {
-         this.badge = this.badge = 2;
+    flipBadgeBack() {
+         this.badge = this.badge = 1;
          this.updateBadgeState();
       }
 
