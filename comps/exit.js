@@ -57,3 +57,4 @@ class TheExit extends HTMLElement {
 
 //MUST HAVE - define the tag for the custom elements
 customElements.define("the-exit", TheExit)
+
