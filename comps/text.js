@@ -19,7 +19,7 @@ template_text.innerHTML = `
         <h1>Title</h1>  
     </div>
     <div class ="information_body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet congue elit. Integer vitae odio congue, iaculis.</p>
+        <p>Lorem ipsum dolor sit amet, aconsectetur adipiscing elit. Phasellus sit amet congue elit. Integer vitae odio congue, iaculis.</p>
     </div>
 </div>
 `;
