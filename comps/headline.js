@@ -14,7 +14,7 @@ template_headline.innerHTML = `
         width: 18rem;
     }
     .headline_text {
-        font-weight: bold;
+        font-weight: bolder;
         font-size:1.2rem;
     }
 
