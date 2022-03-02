@@ -64,6 +64,11 @@ class TheBadge extends HTMLElement {
         this.badge = 0;
         this.shadowRoot.querySelector("#badge-front").onclick = () => this.flipBadgeFront();
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
+
+        if (this.getAttribute("end") === "yes") {
+            this.shadowRoot.querySelector("#badge-front").changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
+            this.shadowRoot.querySelector("#badge-back").changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!

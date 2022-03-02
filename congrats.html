@@ -2,16 +2,16 @@
 <html>
 
 <head>
-	<title>Phase 2 WebApp</title>
+	<title>Congratulations!</title>
 	<script src="comps/congrats.js"></script>
     <script src="comps/exit.js"></script>
 	<script src="comps/badges.js"></script>
     <style>
 		body {
 			display: flex;
-			flex-direction: column;
+
 			background-color: #F3CA40;
-			
+			justify-content: center;
 		}
 		.row {
 			display: flex;
@@ -33,7 +33,7 @@
 		.circle {
 			background-color: #F3CA40;
 			border-radius: 50%;
-			min-width: 400px;
+			min-width: 450px;
 			display: flex;
 			justify-content: center;
 			
@@ -45,14 +45,15 @@
         <the-congrats grats_text="grats"></the-congrats>
 	</div>
 		<div class="row">
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
+			<the-badge name="food" end="yes"></the-badge>
+			<the-badge name="restaurant" end="yes"></the-badge>
+			<the-badge name="landfill" end="yes"></the-badge>
 		</div>
 		<div class="row">
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
-	</div><div class='leave'>
+			<the-badge name="trash" end="yes"></the-badge>
+			<the-badge name="label" end="yes"></the-badge>
+	</div>
+	<div class='leave'>
 		<the-exit icon="exit"></the-exit>
 	</div>
         
