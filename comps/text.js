@@ -1,74 +1,47 @@
-<!DOCTYPE html>
-<html>
+//MUST HAVE - CREATE A TEMPLATE TAG
+var template_text = document.createElement("template"); //<template> </template> RULE
 
-<head>
-	<title>Phase 2 WebApp</title>
-	<script src="comps/badges.js"></script>
-	<script src="comps/headline.js"></script>
-	<script src="comps/vectors.js"></script>
-	<script src="comps/button.js"></script>
-	<script src="comps/exit.js"></script>
-	<script src="comps/text.js"></script>
-	<style>
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			background-color: #5DB666;
-		}
+//To-do - CREATE THE UI HERE!
+template_text.innerHTML = `
+<style>
+.information_title{
+    fontSize: 24px;
+    font-weight:bold;
+}
 
-		.badgebar {
-			display: flex;
-			justify-content: center;
-			position: fixed;
-		}
+.information_body{
+    fontSize: 18px;
+}
+</style>
 
-		.row {
-			display: flex;
-			justify-content: center;
-		}
-	</style>
-</head>
+<div class="text">
+    <div class ="information_title">
+        <h1>Title</h1>  
+    </div>
+    <div class ="information_body">
+        <p>Lorem ipsum dolor sit amet, aconsectetur adipiscing elit. Phasellus sit amet congue elit. Integer vitae odio congue, iaculis.</p>
+    </div>
+</div>
+`;
 
-<body>
-	<h1>Hello world.</h1>
+//MUST HAVE - CREATE A CLASS WITH HTMLELEMENT POWERS (interfaces/functionalities)
+class TheText extends HTMLElement {
 
-	<body>
-		<div class="badgebar">
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
-		</div>
-		<the-headline head_text="Before you throw away that lunch..."></the-headline>
-		<br>
-		<div class="row">
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
-		</div>
-		<div class="row">
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
-		</div>
-		<the-vector class="trashicon" pic="trash"></the-vector>
+    //MUST HAVE - CREATE A CONSTRUCTOR TO DO INITAL ASSOCIATIONS
+    constructor(){
+        super(); //pass on the HTMLElement super powers!
+        this.attachShadow({mode:"open"}) //Attach it to the shadowRoot
 
-		<the-vector class="saladicon" pic="salad"></the-vector>
+        //To-do - CREATE THE STATES FOR THE UI HERE!
+    }
 
-		<the-vector class="jaricon" pic="jar"></the-vector>
+    //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
+    connectedCallback(){
+        this.shadowRoot.appendChild(template_text.content.cloneNode(true)); //use the template to make a clone
+    }
 
-		<the-vector class="restauranticon" pic="restaurant"></the-vector>
+    //To-do - CREATE THE FUNCTIONALITIES HERE!
+}
 
-		<the-vector class="landfillicon" pic="landfill"></the-vector>
-
-		<br>
-		<the-button button_title="Start!"></the-button>
-		<the-exit icon="exit"></the-exit>
-		<the-text></the-text>
-
-
-
-	</body>
-
-</html>
+//MUST HAVE - define the tag for the custom elements
+customElements.define("the-text", TheText)
