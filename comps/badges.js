@@ -14,12 +14,14 @@ template_badge.innerHTML = `
     #badge-container, #badge-front, #badge-back {
         width: 7rem;
         height: 6rem;
+        
     }
 
     #badge {
         transition: .8s ease;
         transform-style: preserve-3d;
         position: relative;
+        
     }
 
     #badge-front, #badge-back {
@@ -27,8 +29,8 @@ template_badge.innerHTML = `
         position: absolute;
         top: 0;
         left: 0;
+        
     }
-
     #badge-back {
         transform: rotateY(180deg);
     }
@@ -66,8 +68,8 @@ class TheBadge extends HTMLElement {
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
 
         if (this.getAttribute("end") === "yes") {
-            this.shadowRoot.querySelector("#badge-front").changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
-            this.shadowRoot.querySelector("#badge-back").changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
+            this.shadowRoot.querySelector("#badge-front").onclick = () => this.changeBadgeFront(`./img/badge_food.svg`);
+            this.shadowRoot.querySelector("#badge-back").onclick = () => this.changeBadgeBack(`./img/badge_food_m.svg`);
         }
     }
 
