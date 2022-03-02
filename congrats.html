@@ -5,17 +5,58 @@
 	<title>Phase 2 WebApp</title>
 	<script src="comps/congrats.js"></script>
     <script src="comps/exit.js"></script>
+	<script src="comps/badges.js"></script>
     <style>
 		body {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
 			background-color: #F3CA40;
+			
+		}
+		.row {
+			display: flex;
+			justify-content: center;
+		}
+		.badge_grid {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			background-color: #5DB666;
+			border-radius: 10%;
+			padding: 100px;
+			max-width: 600px;
+		}
+		.leave {
+			margin-top: 3rem;
+		}
+		.circle {
+			background-color: #F3CA40;
+			border-radius: 50%;
+			min-width: 400px;
+			display: flex;
+			justify-content: center;
+			
 		}
 	</style>
     <body>
+		<div class='badge_grid'>
+			<div class="circle">
         <the-congrats grats_text="grats"></the-congrats>
-        <the-exit icon="exit"></the-exit>
+	</div>
+		<div class="row">
+			<the-badge badge="food"></the-badge>
+			<the-badge badge="restaurants"></the-badge>
+			<the-badge badge="landfills"></the-badge>
+		</div>
+		<div class="row">
+			<the-badge badge="trash"></the-badge>
+			<the-badge badge="labels"></the-badge>
+	</div><div class='leave'>
+		<the-exit icon="exit"></the-exit>
+	</div>
+        
+	</div>
 
     </body>
 </head>

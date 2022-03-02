@@ -90,11 +90,13 @@ class TheBadge extends HTMLElement {
         this.updateBadgeState();
     }
 
-    changeBadge(img='./img/badge_locked.svg') {
-        this.shadowRoot.querySelector("#badge-front > img").src = img;
-        this.shadowRoot.querySelector("#badge-back > img").src = img;
+    changeBadgeFront(img='./img/badge_locked.svg') {
+    this.shadowRoot.querySelector("#badge-front > img").src = img;
+        
     }
-    
+    changeBadgeBack(img='./img/badge_locked_m.svg') {
+    this.shadowRoot.querySelector("#badge-back > img").src = img;
+    }
     /* on correct button it'll be something like 
     document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}.svg`);
     document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}_m.svg`);

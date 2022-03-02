@@ -25,7 +25,8 @@ template_congrats.innerHTML = `
 <div class="congrats">
     <img src="img/boy_eat.svg">
     <div class ="congrats_text"> </div>
-    <h1>Congratulations! You're a master of all.</h1>
+    <h1>Congratulations! </h1>
+    <h2>You're a master of all.</h2>
 </div>
 `;
 

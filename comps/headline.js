@@ -9,6 +9,7 @@ template_headline.innerHTML = `
         align-items:center;
         flex-direction: column;
         width: 20rem;
+        margin-top:5rem;
     }
     .headline img {
         width: 18rem;

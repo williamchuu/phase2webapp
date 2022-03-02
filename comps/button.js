@@ -44,20 +44,62 @@ class TheButton extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback() {
         this.shadowRoot.appendChild(template_button.content.cloneNode(true)); //use the template to make a clone
+        this.count = 0;
         if (this.getAttribute("button_title")) {
             this.shadowRoot.querySelector(".button_title").innerText = this.getAttribute("button_title");
         }
         if (this.getAttribute("button_title") === "Start!") {
             this.shadowRoot.querySelector(".button").onclick = () => this.startQuiz();       
         }
+
+
+        /* Placeholder button answers until actual buttons are made */
+        if (this.getAttribute("button_answer") === "food") {
+            this.shadowRoot.querySelector(".button").onclick = () => 
+            {
+                document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgefood').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+            }
+        }
+        if (this.getAttribute("button_answer") === "label") {
+            this.shadowRoot.querySelector(".button").onclick = () => 
+            {
+                document.querySelector('#badgelabel').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgelabel').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+            }
+        }
+        if (this.getAttribute("button_answer") === "restaurant") {
+            this.shadowRoot.querySelector(".button").onclick = () => 
+            {
+                document.querySelector('#badgerest').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgerest').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+            }
+        }
+        if (this.getAttribute("button_answer") === "trash") {
+            this.shadowRoot.querySelector(".button").onclick = () => 
+            {
+                document.querySelector('#badgetrash').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgetrash').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+            }
+        }
+        if (this.getAttribute("button_answer") === "landfill") {
+            this.shadowRoot.querySelector(".button").onclick = () => 
+            {
+                document.querySelector('#badgeland').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgeland').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+            }
+        }
+            /* --------------- */
+        
         else if (this.getAttribute("button_title") === "Submit") {
             this.shadowRoot.querySelector(".button").onclick = () => this.submitAnswer();
         }
+        
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
     startQuiz() {
-        window.location.replace("./quiz.html");
+        window.location.replace("./index.html");
     }
 
     submitAnswer() {
