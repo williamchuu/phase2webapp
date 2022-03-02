@@ -8,35 +8,37 @@
 	<script src="comps/vectors.js"></script>
 	<script src="comps/button.js"></script>
 	<script src="comps/exit.js"></script>
-	<script src="comps/text.js"></script>
-
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #5DB666;
+		}
+	</style>
 </head>
 
 <body>
-	<h1>Hello world</h1>
+	<h1>Hello world.</h1>
 
 	<body>
+		<the-badge></the-badge>
 		<the-headline head_text="Before you throw away that lunch..."></the-headline>
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
-		
 		<br>
 		<the-vector class="trashicon" pic="trash"></the-vector>
+
 		<the-vector class="saladicon" pic="salad"></the-vector>
+		
 		<the-vector class="jaricon" pic="jar"></the-vector>
+		
 		<the-vector class="restauranticon" pic="restaurant"></the-vector>
+		
 		<the-vector class="landfillicon" pic="landfill"></the-vector>
-		<the-button button_title="Submit"></the-button>
+		
 		<br>
 		<the-button button_title="Start!"></the-button>
 		<the-exit icon="exit"></the-exit>
-		<the-exit icon="top"></the-exit>
 		<the-text></the-text>
-
-		
 
 
 		

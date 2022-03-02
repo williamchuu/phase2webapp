@@ -11,7 +11,7 @@ template_button.innerHTML = `
         border-radius: 20px;
         text-align: center;
         color: #151515;
-        max-width: 10rem;
+        width: 10rem;
 
     }
     .button_title {
