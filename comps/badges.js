@@ -12,8 +12,8 @@ template_badge.innerHTML = `
     } */
 
     #badge-container, #badge-front, #badge-back {
-        width: 10rem;
-        height: 4rem;
+        width: 7rem;
+        height: 6rem;
     }
 
     #badge {
@@ -60,7 +60,7 @@ class TheBadge extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback() {
         this.shadowRoot.appendChild(template_badge.content.cloneNode(true)); //use the template to make a clone
-        // this.shadowRoot.querySelector("#badge").onclick = () => this.changeBadge();
+        // document.querySelector("#badge").onclick = () => this.changeBadge();
         this.badge = 0;
         this.shadowRoot.querySelector("#badge-front").onclick = () => this.flipBadgeFront();
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
@@ -94,8 +94,10 @@ class TheBadge extends HTMLElement {
         this.shadowRoot.querySelector("#badge-front > img").src = img;
         this.shadowRoot.querySelector("#badge-back > img").src = img;
     }
+    
     /* on correct button it'll be something like 
-    document.querySelector('#badge').changeBG(`./imgs/${this.getAttribute('name')}.svg`);
+    document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}.svg`);
+    document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}_m.svg`);
     */
 }
 
