@@ -14,7 +14,7 @@ template_questions.innerHTML = `
         <button class="button_b"></button>
     </div>
     <div class="container_c>
-        <button class="button_c"></button>
+        <button class="button_cc"></button>
     </div>
     <div class="container_d>
         <button class="button_d"></button>
