@@ -1,0 +1,16 @@
+
+
+
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.badgebar {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
