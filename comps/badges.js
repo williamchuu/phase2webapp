@@ -68,8 +68,8 @@ class TheBadge extends HTMLElement {
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
 
         if (this.getAttribute("end") === "yes") {
-            this.shadowRoot.querySelector("#badge-front").onclick = () => this.changeBadgeFront(`./img/badge_food.svg`);
-            this.shadowRoot.querySelector("#badge-back").onclick = () => this.changeBadgeBack(`./img/badge_food_m.svg`);
+            this.shadowRoot.querySelector("#badge-front").src = this.changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
+            this.shadowRoot.querySelector("#badge-back").src = this.changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
         }
     }
 
