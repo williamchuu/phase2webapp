@@ -45,11 +45,11 @@ class TheExit extends HTMLElement {
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
     exitButton() {
-        debugger;
+        window.location.replace("./index.html");
     }
 
     backToTop() {
-        debugger;
+        window.scrollTo(0, 0);
     }
 
 

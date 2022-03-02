@@ -57,7 +57,7 @@ class TheButton extends HTMLElement {
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
     startQuiz() {
-        alert("start button works :)");
+        window.location.replace("./quiz.html");
     }
 
     submitAnswer() {
