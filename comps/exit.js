@@ -42,6 +42,10 @@ class TheExit extends HTMLElement {
         if (this.getAttribute("icon") === "top") {
             this.shadowRoot.querySelector(".icon").onclick = () => this.backToTop();
         }
+        if (this.getAttribute("icon") === "back") {
+            this.shadowRoot.querySelector('.icon').style.cssText = `border:none;`
+            this.shadowRoot.querySelector(".icon").onclick = () => this.goBack();
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
@@ -52,7 +56,9 @@ class TheExit extends HTMLElement {
     backToTop() {
         window.scrollTo(0, 0);
     }
-
+    goBack(){
+        window.location.replace("./landing_page.html");
+    }
 
 }
 

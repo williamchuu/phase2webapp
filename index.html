@@ -25,11 +25,17 @@
 			display: flex;
 			justify-content: center;
 		}
+		.back {
+			display: flex;
+			position: fixed;
+			left: 50px;
+		}
 	</style>
 </head>
 
 <body>
 	<body>
+		<the-exit icon="back" class="back"></the-exit>
 		<div class="badgebar">
 			<the-badge name="food" id='badgefood'></the-badge>
 			<the-badge name="restaurant" id='badgerest'></the-badge>
@@ -55,9 +61,9 @@
 		<the-button button_title="e" button_answer="label"></the-button>
 		
 		
-		<the-exit icon="top" ></the-exit>
+		<the-exit icon="back" ></the-exit>
 		<the-text></the-text>
-
+		
 
 	</body>
 
