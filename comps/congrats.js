@@ -9,9 +9,11 @@ template_congrats.innerHTML = `
         align-items:center;
         flex-direction: column;
         width: 20rem;
+        position: relative;
+        height:25rem;
     }
     .congrats img {
-        width: 18rem;
+        width: 26rem;
     }
     .congrats_text {
         font-weight: bolder;
@@ -24,9 +26,10 @@ template_congrats.innerHTML = `
 
 <div class="congrats">
     <img src="img/boy_eat.svg">
-    <div class ="congrats_text"> </div>
-    <h1>Congratulations! </h1>
-    <h2>You're a master of all.</h2>
+    <div class ="headline_text">
+    <h1>Congratulations</h1>
+    <h2>You're the master of all.</h2>
+    </div>
 </div>
 `;
 

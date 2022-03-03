@@ -59,6 +59,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgefood').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                document.querySelector('#badge-front').style.cssText= `
+           transform: rotateY(360deg);
+           `
             }
         }
         if (this.getAttribute("button_answer") === "label") {
