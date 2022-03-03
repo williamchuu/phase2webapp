@@ -25,34 +25,25 @@
 			display: flex;
 			justify-content: center;
 		}
+		.back {
+			display: flex;
+			position: fixed;
+			left: 50px;
+		}
 	</style>
 </head>
 
 <body>
-	<h1>Hello world.</h1>
-
 	<body>
+		<the-exit icon="back" class="back"></the-exit>
 		<div class="badgebar">
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
+			<the-badge name="food" id='badgefood'></the-badge>
+			<the-badge name="restaurant" id='badgerest'></the-badge>
+			<the-badge name="landfill" id='badgeland'></the-badge>
+			<the-badge name="trash" id='badgetrash'></the-badge>
+			<the-badge name="label" id='badgelabel'></the-badge>
 		</div>
-		<the-headline head_text="Before you throw away that lunch..."></the-headline>
-		<br>
-		<div class="row">
-			<the-badge badge="food"></the-badge>
-			<the-badge badge="restaurants"></the-badge>
-			<the-badge badge="landfills"></the-badge>
-		</div>
-		<div class="row">
-			<the-badge badge="trash"></the-badge>
-			<the-badge badge="labels"></the-badge>
-		</div>
-    
 		<the-vector class="trashicon" pic="trash"></the-vector>
-
 		<the-vector class="saladicon" pic="salad"></the-vector>
 
 		<the-vector class="jaricon" pic="jar"></the-vector>
@@ -62,10 +53,17 @@
 		<the-vector class="landfillicon" pic="landfill"></the-vector>
 
 		<br>
-		<the-button button_title="Start!"></the-button>
-		<the-exit icon="exit" ></the-exit>
+		
+		<the-button button_title="a" button_answer="food"></the-button>
+		<the-button button_title="b" button_answer="restaurant"></the-button>
+		<the-button button_title="c" button_answer="landfill"></the-button>
+		<the-button button_title="d" button_answer="trash"></the-button>
+		<the-button button_title="e" button_answer="label"></the-button>
+		
+		
+		<the-exit icon="back" ></the-exit>
 		<the-text></the-text>
-
+		
 
 	</body>
 

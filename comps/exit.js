@@ -10,6 +10,7 @@ template_exit.innerHTML = `
         border-radius:50%;
         border:5px white solid;
         // background-color:black;
+
     }
 
 </style>
@@ -41,17 +42,23 @@ class TheExit extends HTMLElement {
         if (this.getAttribute("icon") === "top") {
             this.shadowRoot.querySelector(".icon").onclick = () => this.backToTop();
         }
+        if (this.getAttribute("icon") === "back") {
+            this.shadowRoot.querySelector('.icon').style.cssText = `border:none;`
+            this.shadowRoot.querySelector(".icon").onclick = () => this.goBack();
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
     exitButton() {
-        debugger;
+        window.location.replace("./index.html");
     }
 
     backToTop() {
-        debugger;
+        window.scrollTo(0, 0);
     }
-
+    goBack(){
+        window.location.replace("./landing_page.html");
+    }
 
 }
 

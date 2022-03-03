@@ -14,12 +14,14 @@ template_badge.innerHTML = `
     #badge-container, #badge-front, #badge-back {
         width: 7rem;
         height: 6rem;
+        
     }
 
     #badge {
         transition: .8s ease;
         transform-style: preserve-3d;
         position: relative;
+        
     }
 
     #badge-front, #badge-back {
@@ -27,8 +29,8 @@ template_badge.innerHTML = `
         position: absolute;
         top: 0;
         left: 0;
+        
     }
-
     #badge-back {
         transform: rotateY(180deg);
     }
@@ -64,6 +66,11 @@ class TheBadge extends HTMLElement {
         this.badge = 0;
         this.shadowRoot.querySelector("#badge-front").onclick = () => this.flipBadgeFront();
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
+
+        if (this.getAttribute("end") === "yes") {
+            this.shadowRoot.querySelector("#badge-front").src = this.changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
+            this.shadowRoot.querySelector("#badge-back").src = this.changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
@@ -90,11 +97,13 @@ class TheBadge extends HTMLElement {
         this.updateBadgeState();
     }
 
-    changeBadge(img='./img/badge_locked.svg') {
-        this.shadowRoot.querySelector("#badge-front > img").src = img;
-        this.shadowRoot.querySelector("#badge-back > img").src = img;
+    changeBadgeFront(img='./img/badge_locked.svg') {
+    this.shadowRoot.querySelector("#badge-front > img").src = img;
+        
     }
-    
+    changeBadgeBack(img='./img/badge_locked_m.svg') {
+    this.shadowRoot.querySelector("#badge-back > img").src = img;
+    }
     /* on correct button it'll be something like 
     document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}.svg`);
     document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}_m.svg`);
