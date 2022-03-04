@@ -11,8 +11,6 @@ template_congrats.innerHTML = `
         width: 20rem;
         position: relative;
         height:25rem;
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-
     }
     .congrats img {
         width: 26rem;
@@ -23,18 +21,17 @@ template_congrats.innerHTML = `
     }
     h1 {
         text-align: center;
-        // font-family: Roboto, Helvetica, Arial, sans-serif;
-
+        font-family: Roboto, Helvetica, Arial, sans-serif;
     }
     h2 {
-        // font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
 
     }
 </style>
 
 <div class="congrats">
     <img src="img/boy_eat.svg">
-    <div class ="headline_text">
+    <div class ="congrats_text">
     <h1>Congratulations!</h1>
     <h2>You're the Master of All.</h2>
     </div>
@@ -55,7 +52,7 @@ class TheCongrats extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback(){
         this.shadowRoot.appendChild(template_congrats.content.cloneNode(true)); //use the template to make a clone
-        this.shadowRoot.querySelector(".congrats_text").innerHTML = this.getAttribute("congrats_text");
+        // this.shadowRoot.querySelector(".congrats_text").innerHTML = this.getAttribute("congrats_text");
 
     }
 
