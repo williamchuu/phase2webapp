@@ -109,6 +109,12 @@ class TheBadge extends HTMLElement {
         this.shadowRoot.querySelector("#badge-back > img").src = img;
 
     }
+    endingFlip() {
+        this.flipBadgeBack();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 2s ease-out;
+            `
+    }
 }
 
 //MUST HAVE - define the tag for the custom elements
