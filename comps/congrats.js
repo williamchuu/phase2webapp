@@ -21,14 +21,19 @@ template_congrats.innerHTML = `
     }
     h1 {
         text-align: center;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+    }
+    h2 {
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+
     }
 </style>
 
 <div class="congrats">
     <img src="img/boy_eat.svg">
     <div class ="congrats_text">
-    <h1>Congratulations</h1>
-    <h2>You're the master of all.</h2>
+    <h1>Congratulations!</h1>
+    <h2>You're the Master of All.</h2>
     </div>
 </div>
 `;
