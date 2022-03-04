@@ -26,7 +26,7 @@ template_congrats.innerHTML = `
 
 <div class="congrats">
     <img src="img/boy_eat.svg">
-    <div class ="headline_text">
+    <div class ="congrats_text">
     <h1>Congratulations</h1>
     <h2>You're the master of all.</h2>
     </div>
@@ -47,7 +47,7 @@ class TheCongrats extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback(){
         this.shadowRoot.appendChild(template_congrats.content.cloneNode(true)); //use the template to make a clone
-        this.shadowRoot.querySelector(".congrats_text").innerHTML = this.getAttribute("congrats_text");
+        // this.shadowRoot.querySelector(".congrats_text").innerHTML = this.getAttribute("congrats_text");
 
     }
 

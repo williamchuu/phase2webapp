@@ -18,7 +18,7 @@ template_badge.innerHTML = `
     }
 
     #badge {
-        transition: .8s ease;
+        transition: 1s ease;
         transform-style: preserve-3d;
         position: relative;
         
@@ -80,6 +80,7 @@ class TheBadge extends HTMLElement {
             this.shadowRoot.querySelector('#badge').style.cssText= `
             transform: rotateY(180deg);
             `
+            
         }
         if(this.badge === 1) {
            this.shadowRoot.querySelector('#badge').style.cssText= `
@@ -98,16 +99,16 @@ class TheBadge extends HTMLElement {
     }
 
     changeBadgeFront(img='./img/badge_locked.svg') {
-    this.shadowRoot.querySelector("#badge-front > img").src = img;
-        
+        this.shadowRoot.querySelector("#badge-front > img").src = img;
+        this.flipBadgeBack();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 1.2s ease-out;
+            `
     }
     changeBadgeBack(img='./img/badge_locked_m.svg') {
-    this.shadowRoot.querySelector("#badge-back > img").src = img;
+        this.shadowRoot.querySelector("#badge-back > img").src = img;
+
     }
-    /* on correct button it'll be something like 
-    document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}.svg`);
-    document.querySelector('#badge').changeBadge(`./img/badge_${this.getAttribute('name')}_m.svg`);
-    */
 }
 
 //MUST HAVE - define the tag for the custom elements

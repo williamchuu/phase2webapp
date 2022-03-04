@@ -44,7 +44,6 @@ class TheButton extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback() {
         this.shadowRoot.appendChild(template_button.content.cloneNode(true)); //use the template to make a clone
-        this.count = 0;
         if (this.getAttribute("button_title")) {
             this.shadowRoot.querySelector(".button_title").innerText = this.getAttribute("button_title");
         }
@@ -59,35 +58,44 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgefood').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
-
+                document.food = true;
+                this.pageSwap();
             }
         }
-        if (this.getAttribute("button_answer") === "label") {
+        else if (this.getAttribute("button_answer") === "label") {
             this.shadowRoot.querySelector(".button").onclick = () => 
             {
                 document.querySelector('#badgelabel').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgelabel').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                document.label = true;
+                this.pageSwap();
             }
         }
-        if (this.getAttribute("button_answer") === "restaurant") {
+        else if (this.getAttribute("button_answer") === "restaurant") {
             this.shadowRoot.querySelector(".button").onclick = () => 
             {
                 document.querySelector('#badgerest').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgerest').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                document.rest = true;
+                this.pageSwap();
             }
         }
-        if (this.getAttribute("button_answer") === "trash") {
+        else if (this.getAttribute("button_answer") === "trash") {
             this.shadowRoot.querySelector(".button").onclick = () => 
             {
                 document.querySelector('#badgetrash').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgetrash').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                document.trash = true;
+                this.pageSwap();
             }
         }
-        if (this.getAttribute("button_answer") === "landfill") {
+        else if (this.getAttribute("button_answer") === "landfill") {
             this.shadowRoot.querySelector(".button").onclick = () => 
             {
                 document.querySelector('#badgeland').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgeland').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                document.land = true;
+                this.pageSwap();
             }
         }
             /* --------------- */
@@ -106,7 +114,30 @@ class TheButton extends HTMLElement {
     submitAnswer() {
         alert("submit button works :D");
     }
-}
+    swapPage() {
+        window.location.replace("./congrats.html");
+    }
+    pageSwap() {
+        console.log(document.food)
+        console.log(document.rest)
+        console.log(document.land)
+        console.log(document.trash)
+        console.log(document.label)
+        if (document.food === true) {
+            if(document.rest === true) {
+                if(document.land === true) {
+                    if(document.trash === true) {
+                        if(document.label === true) {
+                            document.setTimeout((document.swapPage(), 10000));
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    
 
+}
+ 
 //MUST HAVE - define the tag for the custom elements
 customElements.define("the-button", TheButton)
