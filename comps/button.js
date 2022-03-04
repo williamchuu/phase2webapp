@@ -128,11 +128,8 @@ class TheButton extends HTMLElement {
                 if(document.land === true) {
                     if(document.trash === true) {
                         if(document.label === true) {
-                                document.querySelector('#badgefood').endingFlip();
-                                document.querySelector('#badgerest').endingFlip();
-                                document.querySelector('#badgeland').endingFlip();
-                                document.querySelector('#badgetrash').endingFlip();
-                                document.querySelector('#badgelabel').endingFlip();
+                                document.querySelector(`#badgefood, #badgerest, #badgeland, #badgetrash, #badgelabel`).endingFlip();
+
                                 setTimeout(function() {
                                 this.swapPage(); }, 2000);
 
