@@ -128,7 +128,7 @@ class TheButton extends HTMLElement {
                 if(document.land === true) {
                     if(document.trash === true) {
                         if(document.label === true) {
-                            document.setTimeout((document.swapPage(), 10000));
+                            document.setTimeout((this.swapPage(), 10000));
                         }
                     }
                 } 
