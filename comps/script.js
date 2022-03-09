@@ -1,7 +1,8 @@
+// Badge Variables
 var food = false;
 var trash = false;
 var land = false;
-var label= false;
+var label = false;
 var rest = false;
 
 // sessionStorage.setItem(0, score);

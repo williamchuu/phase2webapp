@@ -52,7 +52,7 @@ class TheScore extends HTMLElement {
       }
       if (endScore > 20 && this.getAttribute("end") === "yes") {
          this.shadowRoot.querySelector(".text").style.display = "block";
-         this.shadowRoot.querySelector(".text").innerHTML = "It really took you " + endScore + " attempts to complete the quiz? The quiz isn't really that hard.";
+         this.shadowRoot.querySelector(".text").innerHTML = "It really took you " + endScore + " attempts to complete this quiz? The quiz isn't really that hard.";
       }
    }
 
