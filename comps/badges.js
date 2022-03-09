@@ -75,16 +75,21 @@ class TheBadge extends HTMLElement {
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
 
-    updateBadgeState(){
-        if(this.badge === 0) {
-            this.shadowRoot.querySelector('#badge').style.cssText= `
+    updateBadgeState() {
+        if (this.badge === 0) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
             transform: rotateY(180deg);
             `
-            
+
         }
-        if(this.badge === 1) {
-           this.shadowRoot.querySelector('#badge').style.cssText= `
+        if (this.badge === 1) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
            transform: rotateY(360deg);
+           `
+        }
+        if (this.badge === 2) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
+           transform: rotateY(1080deg);
            `
         }
     }
@@ -98,19 +103,20 @@ class TheBadge extends HTMLElement {
         this.updateBadgeState();
     }
 
-    changeBadgeFront(img='./img/badge_locked.svg') {
+    changeBadgeFront(img = './img/badge_locked.svg') {
         this.shadowRoot.querySelector("#badge-front > img").src = img;
         this.flipBadgeBack();
         this.shadowRoot.querySelector('#badge').style.cssText += `
             transition: 1.2s ease-out;
             `
     }
-    changeBadgeBack(img='./img/badge_locked_m.svg') {
+    changeBadgeBack(img = './img/badge_locked_m.svg') {
         this.shadowRoot.querySelector("#badge-back > img").src = img;
 
     }
     endingFlip() {
-        this.flipBadgeBack();
+        this.badge = this.badge = 2;
+        this.updateBadgeState();
         this.shadowRoot.querySelector('#badge').style.cssText += `
             transition: 2s ease-out;
             `

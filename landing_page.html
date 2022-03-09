@@ -5,10 +5,10 @@
 	<title>Before You Throw Away That Lunch</title>
 	<script src="comps/badges.js"></script>
 	<script src="comps/headline.js"></script>
-	<script src="comps/vectors.js"></script>
 	<script src="comps/button.js"></script>
-	<script src="comps/exit.js"></script>
 	<script src="comps/text.js"></script>
+	<script src="comps/score.js"></script>
+	<script src="comps/script.js"></script>
 	<style>
 		body {
 			display: flex;
@@ -44,6 +44,7 @@
 		<the-badge badge="labels"></the-badge>
 	</div>
 		<the-text></the-text>
+		<the-score end="no"></the-score>
 	<div class='begin'>
 		<the-button button_title="Start!"></the-button>
 	</div>
@@ -52,3 +53,6 @@
 
 </body>
 </head>
+<script>
+	var endScore = parseInt(sessionStorage.getItem(0));
+</script>

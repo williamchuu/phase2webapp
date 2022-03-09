@@ -9,6 +9,8 @@
 	<script src="comps/button.js"></script>
 	<script src="comps/exit.js"></script>
 	<script src="comps/text.js"></script>
+	<script src="comps/script.js"></script>
+	<script src="comps/score.js"></script>
 	<style>
 		body {
 			display: flex;
@@ -37,31 +39,30 @@
 <body>
 	<body>
 		<div class="badgebar">
-			<the-badge name="food" id='badgefood'></the-badge>
-			<the-badge name="restaurant" id='badgerest'></the-badge>
-			<the-badge name="landfill" id='badgeland'></the-badge>
-			<the-badge name="trash" id='badgetrash'></the-badge>
-			<the-badge name="label" id='badgelabel'></the-badge>
+			<the-badge name="food" id='badgefood' class="badges"></the-badge>
+			<the-badge name="restaurant" id='badgerest' class="badges"></the-badge>
+			<the-badge name="landfill" id='badgeland' class="badges"></the-badge>
+			<the-badge name="trash" id='badgetrash' class="badges"></the-badge>
+			<the-badge name="label" id='badgelabel' class="badges"></the-badge>
 		</div>
 		<the-exit icon="back" class="back"></the-exit>
 
-		<the-vector class="trashicon" pic="trash"></the-vector>
-
 		<the-vector class="saladicon" pic="salad"></the-vector>
-
-		<the-vector class="jaricon" pic="jar"></the-vector>
+		<the-button button_title="a" button_answer="food"></the-button>
 
 		<the-vector class="restauranticon" pic="restaurant"></the-vector>
+		<the-button button_title="b" button_answer="restaurant"></the-button>
 
 		<the-vector class="landfillicon" pic="landfill"></the-vector>
+		<the-button button_title="c" button_answer="landfill"></the-button>
+
+		<the-vector class="trashicon" pic="trash"></the-vector>
+		<the-button button_title="d" button_answer="trash"></the-button>
+
+		<the-vector class="jaricon" pic="jar"></the-vector>
+		<the-button button_title="e" button_answer="label"></the-button>
 
 		<br>
-		
-		<the-button button_title="a" button_answer="food"></the-button>
-		<the-button button_title="b" button_answer="restaurant"></the-button>
-		<the-button button_title="c" button_answer="landfill"></the-button>
-		<the-button button_title="d" button_answer="trash"></the-button>
-		<the-button button_title="e" button_answer="label"></the-button>
 		
 		<the-exit icon="top" ></the-exit>
 
@@ -72,13 +73,5 @@
 
 </html>
 <script>
-var food = false;
-var trash = false;
-var land = false;
-var label= false;
-var rest = false;
-
-function swapPage() {
-        window.location.replace("./congrats.html");
-    }
+	var endScore = parseInt(sessionStorage.getItem(0));
 </script>
