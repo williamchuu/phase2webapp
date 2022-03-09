@@ -58,6 +58,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgefood').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                endScore += 1;
+                sessionStorage.setItem('0', endScore);
+                //console.log(sessionStorage)
                 document.food = true;
                 this.pageSwap();
             }
@@ -67,6 +70,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgelabel').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgelabel').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                endScore += 1;
+                sessionStorage.setItem('0', endScore);
+                //console.log(sessionStorage)
                 document.label = true;
                 this.pageSwap();
             }
@@ -76,6 +82,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgerest').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgerest').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                endScore += 1;
+                sessionStorage.setItem('0', endScore);
+                //console.log(sessionStorage)
                 document.rest = true;
                 this.pageSwap();
             }
@@ -85,6 +94,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgetrash').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgetrash').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                endScore += 1;
+                sessionStorage.setItem('0', endScore);
+                //console.log(sessionStorage)
                 document.trash = true;
                 this.pageSwap();
             }
@@ -94,6 +106,9 @@ class TheButton extends HTMLElement {
             {
                 document.querySelector('#badgeland').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgeland').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
+                endScore += 1;
+                sessionStorage.setItem('0', endScore);
+                console.log(sessionStorage)
                 document.land = true;
                 this.pageSwap();
             }

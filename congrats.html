@@ -6,6 +6,8 @@
 	<script src="comps/congrats.js"></script>
 	<script src="comps/exit.js"></script>
 	<script src="comps/badges.js"></script>
+	<script src="comps/score.js"></script>
+	<script src="comps/script.js"></script>
 	<style>
 		body {
 			display: flex;
@@ -64,12 +66,21 @@
 				<the-badge name="label" end="yes"></the-badge>
 			</div>
 		</div>
+		<br>
+		<div class="score">
+			<the-score end="yes"></the-score>
+		</div>
 		<div class='leave'>
 			<the-exit icon="exit"></the-exit>
 		</div>
+		
 
 	</div>
 
 	
 </body>
 </head>
+<script>
+	var endScore = parseInt(sessionStorage.getItem(0));
+	console.log(endScore)
+</script>
