@@ -102,8 +102,9 @@ class TheButton extends HTMLElement {
                 document.querySelector('#badgeland').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgeland').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
                 endScore += 1;
-                sessionStorage.setItem('0', endScore);
-                console.log(sessionStorage)
+                sessionStorage.setItem("0", endScore);
+                console.log(sessionStorage);
+                console.log(endScore);
                 document.land = true;
                 this.pageSwap();
             }
