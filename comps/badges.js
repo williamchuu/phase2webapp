@@ -66,7 +66,7 @@ class TheBadge extends HTMLElement {
         this.badge = 0;
         this.shadowRoot.querySelector("#badge-front").onclick = () => this.flipBadgeFront();
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
-
+        // If it is at end, unlock the badges already.
         if (this.getAttribute("end") === "yes") {
             this.shadowRoot.querySelector("#badge-front").src = this.changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
             this.shadowRoot.querySelector("#badge-back").src = this.changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
@@ -76,24 +76,36 @@ class TheBadge extends HTMLElement {
     //To-do - CREATE THE FUNCTIONALITIES HERE!
 
     updateBadgeState() {
+        // Front --> Back
         if (this.badge === 0) {
             this.shadowRoot.querySelector('#badge').style.cssText = `
             transform: rotateY(180deg);
             `
 
         }
+        // Back --> Front
         if (this.badge === 1) {
             this.shadowRoot.querySelector('#badge').style.cssText = `
            transform: rotateY(360deg);
            `
         }
+        // Ending Animation
         if (this.badge === 2) {
             this.shadowRoot.querySelector('#badge').style.cssText = `
            transform: rotateY(1080deg);
            `
         }
+        // Congrats animation
+        if (this.badge === 3) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
+           transform: rotateY(0deg);
+           `
+           
+        }
     }
 
+
+    // Functions to change the badge state, some increase/decrease the speed of animation
     flipBadgeFront() {
         this.badge = this.badge = 0;
         this.updateBadgeState();
@@ -121,6 +133,14 @@ class TheBadge extends HTMLElement {
             transition: 2s ease-out;
             `
     }
+    congratsFlip() {
+        this.badge = this.badge = 3;
+        this.updateBadgeState();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 1.5s ease-out;
+            `
+    }
+
 }
 
 //MUST HAVE - define the tag for the custom elements
