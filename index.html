@@ -9,8 +9,17 @@
 	<script src="comps/button.js"></script>
 	<script src="comps/exit.js"></script>
 	<script src="comps/text.js"></script>
+	<script src="comps/quiz.js"></script>
 
 </head>
+<style>
+	.quiz_grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 100px;
+      margin: 10px 10px 40px 10px;
+	  }
+</style>
 
 <body>
 	<h1>Hello world</h1>
@@ -29,7 +38,13 @@
 		<the-button button_title="Start!"></the-button>
 		<the-exit></the-exit>
 		<the-text></the-text>
-		
+	
+		<div class="quiz_grid">
+			<the-quiz></the-quiz>
+			<the-quiz></the-quiz>
+			<the-quiz></the-quiz>
+			<the-quiz></the-quiz>
+		</div>
 
 
 		
