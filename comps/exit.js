@@ -54,7 +54,7 @@ class TheExit extends HTMLElement {
     }
 
     backToTop() {
-        window.scrollTo(0, 0);
+        window.scrollTo({top: 0, behavior: "smooth"});
     }
     goBack(){
         window.location.replace("./landing_page.html");
