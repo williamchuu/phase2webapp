@@ -7,13 +7,13 @@ template_text.innerHTML = `
 .information_title{
     fontSize: 24px;
     font-weight:bold;
-    text-align: center;
+    text-align: left;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 .information_body{
     fontSize: 18px;
-    text-align: center;
+    text-align: left;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 </style>
