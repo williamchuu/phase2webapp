@@ -13,15 +13,13 @@ template_badge.innerHTML = `
 
     #badge-container, #badge-front, #badge-back {
         width: 7rem;
-        height: 6rem;
-        
+        height: 6rem;   
     }
 
     #badge {
         transition: 1s ease;
         transform-style: preserve-3d;
         position: relative;
-        
     }
 
     #badge-front, #badge-back {
@@ -122,10 +120,11 @@ class TheBadge extends HTMLElement {
             transition: 1.2s ease-out;
             `
     }
+
     changeBadgeBack(img = './img/badge_locked_m.svg') {
         this.shadowRoot.querySelector("#badge-back > img").src = img;
-
     }
+
     endingFlip() {
         this.badge = this.badge = 2;
         this.updateBadgeState();
@@ -133,6 +132,7 @@ class TheBadge extends HTMLElement {
             transition: 2s ease-out;
             `
     }
+
     congratsFlip() {
         this.badge = this.badge = 3;
         this.updateBadgeState();
@@ -140,7 +140,6 @@ class TheBadge extends HTMLElement {
             transition: 1.5s ease-out;
             `
     }
-
 }
 
 //MUST HAVE - define the tag for the custom elements
