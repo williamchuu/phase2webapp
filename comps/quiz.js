@@ -4,7 +4,7 @@ var template_quiz = document.createElement("template"); //<template> </template>
 //To-do - CREATE THE UI HERE!
 template_quiz.innerHTML = `
 <style>
-    .quiz-card {
+    .quiz_card {
         background-color: #FFFFF;
         width: 150px;
         height: 50px;
@@ -15,15 +15,20 @@ template_quiz.innerHTML = `
         
     }
 
-    .quiz_text{
-        padding: 4px 0px 0px 0px;
+    .quiz_title{
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        padding: 20px 0px 0px 0px;
     }
 
+    .quiz_card:hover{
+        background-color: #CAA21D;
+    }
+    
 </style>
-
-<div class="quiz-card">
-    <div class="quiz_text">
-    <p>Quiz Text</p>
+<div class="quiz_card">
+    <div class="quiz_title">
+    <p>h</p>
     </div>
 </div>
 
@@ -43,9 +48,38 @@ class TheQuiz extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback(){
         this.shadowRoot.appendChild(template_quiz.content.cloneNode(true)); //use the template to make a clone
+        this.shadowRoot.querySelector(".quiz_title").innerHTML = this.getAttribute("quiz_title");
+
+        if (this.getAttribute("quiz_title") === "A"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
+        }
+        
+        else if (this.getAttribute("quiz_title") === "B"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
+        }
+        
+        else if (this.getAttribute("quiz_title") === "C"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
+        }
+        
+        else if (this.getAttribute("quiz_title") === "D"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
+        }
     }
 
+
+    
+
     //To-do - CREATE THE FUNCTIONALITIES HERE!
+    correctAnswer(){
+        alert("answer correct");
+    }
+
+    wrongAnswer(){
+        alert("answer wrong");
+    }
+
+
 }
 
 //MUST HAVE - define the tag for the custom elements
