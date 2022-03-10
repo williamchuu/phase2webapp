@@ -12,12 +12,12 @@ template_badge.innerHTML = `
     } */
 
     #badge-container, #badge-front, #badge-back {
-        width: 10rem;
-        height: 4rem;
+        width: 7rem;
+        height: 6rem;   
     }
 
     #badge {
-        transition: .8s ease;
+        transition: 1s ease;
         transform-style: preserve-3d;
         position: relative;
     }
@@ -27,8 +27,8 @@ template_badge.innerHTML = `
         position: absolute;
         top: 0;
         left: 0;
+        
     }
-
     #badge-back {
         transform: rotateY(180deg);
     }
@@ -60,27 +60,50 @@ class TheBadge extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback() {
         this.shadowRoot.appendChild(template_badge.content.cloneNode(true)); //use the template to make a clone
-        // this.shadowRoot.querySelector("#badge").onclick = () => this.changeBadge();
+        // document.querySelector("#badge").onclick = () => this.changeBadge();
         this.badge = 0;
         this.shadowRoot.querySelector("#badge-front").onclick = () => this.flipBadgeFront();
         this.shadowRoot.querySelector("#badge-back").onclick = () => this.flipBadgeBack();
+        // If it is at end, unlock the badges already.
+        if (this.getAttribute("end") === "yes") {
+            this.shadowRoot.querySelector("#badge-front").src = this.changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
+            this.shadowRoot.querySelector("#badge-back").src = this.changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
 
-    updateBadgeState(){
-        if(this.badge === 0) {
-            this.shadowRoot.querySelector('#badge').style.cssText= `
+    updateBadgeState() {
+        // Front --> Back
+        if (this.badge === 0) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
             transform: rotateY(180deg);
             `
+
         }
-        if(this.badge === 1) {
-           this.shadowRoot.querySelector('#badge').style.cssText= `
+        // Back --> Front
+        if (this.badge === 1) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
            transform: rotateY(360deg);
            `
         }
+        // Ending Animation
+        if (this.badge === 2) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
+           transform: rotateY(1080deg);
+           `
+        }
+        // Congrats animation
+        if (this.badge === 3) {
+            this.shadowRoot.querySelector('#badge').style.cssText = `
+           transform: rotateY(0deg);
+           `
+           
+        }
     }
 
+
+    // Functions to change the badge state, some increase/decrease the speed of animation
     flipBadgeFront() {
         this.badge = this.badge = 0;
         this.updateBadgeState();
@@ -90,13 +113,33 @@ class TheBadge extends HTMLElement {
         this.updateBadgeState();
     }
 
-    changeBadge(img='./img/badge_locked.svg') {
+    changeBadgeFront(img = './img/badge_locked.svg') {
         this.shadowRoot.querySelector("#badge-front > img").src = img;
+        this.flipBadgeBack();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 1.2s ease-out;
+            `
+    }
+
+    changeBadgeBack(img = './img/badge_locked_m.svg') {
         this.shadowRoot.querySelector("#badge-back > img").src = img;
     }
-    /* on correct button it'll be something like 
-    document.querySelector('#badge').changeBG(`./imgs/${this.getAttribute('name')}.svg`);
-    */
+
+    endingFlip() {
+        this.badge = this.badge = 2;
+        this.updateBadgeState();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 2s ease-out;
+            `
+    }
+
+    congratsFlip() {
+        this.badge = this.badge = 3;
+        this.updateBadgeState();
+        this.shadowRoot.querySelector('#badge').style.cssText += `
+            transition: 1.5s ease-out;
+            `
+    }
 }
 
 //MUST HAVE - define the tag for the custom elements

@@ -7,8 +7,8 @@ template_vector.innerHTML = `
 
 
     .vectors {
-        width: 10rem;
-        height: 10rem;
+        width: 13rem;
+        height: 13rem;
     }
 
 </style>

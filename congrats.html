@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Congratulations!</title>
+	<script src="comps/congrats.js"></script>
+	<script src="comps/exit.js"></script>
+	<script src="comps/badges.js"></script>
+	<script src="comps/score.js"></script>
+	<script src="comps/script.js"></script>
+	<style>
+		body {
+			display: flex;
+			background-color: #5A5353;
+			justify-content: center;
+		}
+
+		.row {
+			display: flex;
+			justify-content: center;
+		}
+
+		.badge_grid {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			background-color: #5DB666;
+			border-radius: 10%;
+			padding: 100px;
+			max-width: 600px;
+		}
+
+		.leave {
+			margin-top: 3rem;
+		}
+
+		.circle {
+			background-color: #F3CA40;
+			border-radius: 50%;
+			min-width: 400px;
+			min-height: 200px;
+			display: flex;
+			justify-content: center;
+
+		}
+
+		.badges {
+			margin-top: 10rem;
+		}
+	</style>
+
+<body>
+	<div class='badge_grid'>
+		<div class="circle">
+			<the-congrats></the-congrats>
+		</div>
+		<div class="badges">
+			<div class="row">
+				<the-badge name="food" end="yes" id="badgefood"></the-badge>
+				<the-badge name="restaurant" end="yes" id="badgerest"></the-badge>
+				<the-badge name="landfill" end="yes" id="badgeland"></the-badge>
+			</div>
+			<div class="row">
+				<the-badge name="trash" end="yes" id="badgetrash"></the-badge>
+				<the-badge name="label" end="yes" id="badgelabel"></the-badge>
+			</div>
+		</div>
+		<br>
+		<div class="score">
+			<the-score end="yes"></the-score>
+		</div>
+		<div class='leave'>
+			<the-exit icon="exit"></the-exit>
+		</div>
+
+
+	</div>
+
+
+</body>
+</head>
+<script>
+	console.log(endScore)
+	/* setTimeout(function () {
+		setTimeout(function () {
+			document.querySelector(`#badgefood`).congratsFlip();
+		}, 100);
+		setTimeout(function () {
+			document.querySelector(`#badgerest`).congratsFlip();
+		}, 200);
+		setTimeout(function () {
+			document.querySelector(`#badgeland`).congratsFlip();
+		}, 300);
+		setTimeout(function () {
+			document.querySelector(`#badgetrash`).congratsFlip();
+		}, 400);
+		setTimeout(function () {
+			document.querySelector(`#badgelabel`).congratsFlip();
+		}, 500);
+	}, 500); */
+</script>

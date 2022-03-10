@@ -9,6 +9,8 @@ template_exit.innerHTML = `
         padding:.5rem;
         border-radius:50%;
         border:5px white solid;
+        // background-color:black;
+
     }
 
 </style>
@@ -30,12 +32,36 @@ class TheExit extends HTMLElement {
 
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback(){
-        this.shadowRoot.appendChild(template_exit.content.cloneNode(true)); //use the template to make a clone
-        this.shadowRoot.querySelector(".icon").src = this.getAttribute(`./imgs/${this.getAttribute('icon')}.svg`);
+
+        this.shadowRoot.appendChild(template_exit.content.cloneNode(true)); //use the template to make a 
+        this.shadowRoot.querySelector(".icon > img").src = (`./img/${this.getAttribute("icon")}.svg`);
+
+        if (this.getAttribute("icon") === "exit") {
+            this.shadowRoot.querySelector(".icon").onclick = () => this.exitButton();       
+        }
+        if (this.getAttribute("icon") === "top") {
+            this.shadowRoot.querySelector(".icon").onclick = () => this.backToTop();
+        }
+        if (this.getAttribute("icon") === "back") {
+            this.shadowRoot.querySelector('.icon').style.cssText = `border:none;`
+            this.shadowRoot.querySelector(".icon").onclick = () => this.goBack();
+        }
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
+    exitButton() {
+        window.location.replace("./index.html");
+    }
+
+    backToTop() {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    }
+    goBack(){
+        window.location.replace("./landing_page.html");
+    }
+
 }
 
 //MUST HAVE - define the tag for the custom elements
 customElements.define("the-exit", TheExit)
+

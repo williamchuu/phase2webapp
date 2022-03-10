@@ -2,16 +2,62 @@
 <html>
 
 <head>
-	<title>Phase 2 WebApp</title>
+	<title>Food Quiz</title>
 	<script src="comps/badges.js"></script>
 	<script src="comps/headline.js"></script>
 	<script src="comps/vectors.js"></script>
 	<script src="comps/button.js"></script>
 	<script src="comps/exit.js"></script>
 	<script src="comps/text.js"></script>
+<<<<<<< HEAD
 	<script src="comps/quiz.js"></script>
 	<script src="comps/questions.js"></script>
+=======
+	<script src="comps/script.js"></script>
+	<script src="comps/score.js"></script>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #5DB666;
+		}
+>>>>>>> 63b5428ab15622a27485fa13e0acd0d4ab78809d
 
+		.badgebar {
+			display: flex;
+			justify-content: center;
+			position: fixed;
+		}
+
+		.row {
+			display: flex;
+			justify-content: center;
+		}
+
+		.back {
+			display: flex;
+			position: fixed;
+			left: 50px;
+			top: 120px;
+		}
+
+		.section {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding-top: 1rem;
+		}
+
+		.quiz {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 80px;
+			width: 35rem;
+		}
+	</style>
 </head>
 <style>
 	.quiz_grid{
@@ -23,19 +69,73 @@
 </style>
 
 <body>
-	<h1>Hello world</h1>
 
 	<body>
-		<the-headline head_text="Before you throw away that lunch..."></the-headline>
-		<the-badge></the-badge>
+		<div class="badgebar">
+			<the-badge name="food" id='badgefood' class="badges"></the-badge>
+			<the-badge name="restaurant" id='badgerest' class="badges"></the-badge>
+			<the-badge name="landfill" id='badgeland' class="badges"></the-badge>
+			<the-badge name="trash" id='badgetrash' class="badges"></the-badge>
+			<the-badge name="label" id='badgelabel' class="badges"></the-badge>
+		</div>
+		<the-exit icon="back" class="back"></the-exit>
+
+		<div class="quiz">
+			<div class="section">
+				<the-vector class="saladicon" pic="salad"></the-vector>
+				<the-text head_text="Food Waste"
+					sub_text="There is about 1/3 of all food produced being wasted every year, which is about 1.3 billion tonnes of food. However, there are still about seven hundred million of people sufffering from starvation.">
+				</the-text>
+				<the-text head_text="Question #1 :" sub_text="What is the percentage of food being wasted every year?">
+				</the-text>
+				<the-button button_title="a" button_answer="food"></the-button>
+			</div>
+
+			<div class="section">
+				<the-vector class="restauranticon" pic="restaurant"></the-vector>
+				<the-text head_text="Restaurant Waste"
+					sub_text="Of all the food waste, approximately 61% of food are from families, 26% are from restaurants, and 11% are from retailers. ">
+				</the-text>
+				<the-text head_text="Question #2 :"
+					sub_text="What percentage of the food waste is caused by restaurants?"></the-text>
+				<the-button button_title="b" button_answer="restaurant"></the-button>
+			</div>
+
+			<div class="section">
+				<the-vector class="landfillicon" pic="landfill"></the-vector>
+				<the-text head_text="Landfill Decomposing"
+					sub_text="Composing is one of few ways to minimize waste. It can take from hundreds to thousands of years for a plastic bag to decompose naturally.">
+				</the-text>
+				<the-text head_text="Question #3 :"
+					sub_text="Which of the following would take the longest to fully decompose in a landfill?">
+				</the-text>
+				<the-button button_title="c" button_answer="landfill"></the-button>
+			</div>
+
+			<div class="section">
+				<the-vector class="trashicon" pic="trash"></the-vector>
+				<the-text head_text="Waste Categories"
+					sub_text="Waste can be classified into five types of waste: liquid waste, solid rubbish, organic waste, recyclable rubbish and hazardous waste.">
+				</the-text>
+				<the-text head_text="Question #4 :" sub_text="A cardboard pizza box is what kind of waste?"></the-text>
+				<the-button button_title="d" button_answer="trash"></the-button>
+			</div>
+
+			<div class="section">
+				<the-vector class="jaricon" pic="jar"></the-vector>
+				<the-text head_text="Expire/Best Before Date"
+					sub_text="The most common reason people throw out food is because people confuse the labels: “Best before”, “Expires on”, and “Open date”. Many people throw away the food when it has passed the “Best before” date, but they are still edible.">
+				</the-text>
+				<the-text head_text="Question #5 :" sub_text="The ________ shows the last day a food should be EATEN.">
+				</the-text>
+				<the-button button_title="e" button_answer="label"></the-button>
+			</div>
+
+
+		</div>
 		<br>
-		<the-vector class="trashicon" pic="trash"></the-vector>
-		<the-vector class="saladicon" pic="salad"></the-vector>
-		<the-vector class="jaricon" pic="jar"></the-vector>
-		<the-vector class="restauranticon" pic="restaurant"></the-vector>
-		<the-vector class="landfillicon" pic="landfill"></the-vector>
-		<the-button button_title="Submit"></the-button>
 		<br>
+<<<<<<< HEAD
 		<the-button button_title="Start!"></the-button>
 		<the-exit></the-exit>
 		<the-text></the-text>
@@ -49,8 +149,10 @@
 		<the-questions></the-questions>
 		
 
+=======
+		<the-exit icon="top"></the-exit>
+>>>>>>> 63b5428ab15622a27485fa13e0acd0d4ab78809d
 
-		
 	</body>
 
 </html>

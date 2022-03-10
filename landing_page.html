@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Before You Throw Away That Lunch</title>
+	<script src="comps/badges.js"></script>
+	<script src="comps/headline.js"></script>
+	<script src="comps/button.js"></script>
+	<script src="comps/text.js"></script>
+	<script src="comps/score.js"></script>
+	<script src="comps/script.js"></script>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #5DB666;
+			margin: auto;
+			padding: 50px;
+		}
+
+		.row {
+			display: flex;
+			align-items: center;
+		}
+
+		.begin {
+			margin-top: 10rem;
+		}
+
+	</style>
+
+<body>
+	
+	<the-headline head_text="Before you throw away that lunch..."></the-headline>
+	<br>
+	<div class="row">
+		<the-badge badge="food"></the-badge>
+		<the-badge badge="restaurants"></the-badge>
+		<the-badge badge="landfills"></the-badge>
+	</div>
+	<div class="row">
+		<the-badge badge="trash"></the-badge>
+		<the-badge badge="labels"></the-badge>
+	</div>
+		<br>
+		<the-score end="no"></the-score>
+	<div class='begin'>
+		<the-button button_title="Start!"></the-button>
+	</div>
+
+
+
+</body>
+</head>
