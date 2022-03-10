@@ -7,10 +7,12 @@ template_text.innerHTML = `
 .information_title{
     fontSize: 24px;
     font-weight:bold;
+    text-align: center;
 }
 
 .information_body{
     fontSize: 18px;
+    text-align: center;
 }
 </style>
 
@@ -38,6 +40,8 @@ class TheText extends HTMLElement {
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
     connectedCallback(){
         this.shadowRoot.appendChild(template_text.content.cloneNode(true)); //use the template to make a clone
+        this.shadowRoot.querySelector(".information_title").innerHTML = this.getAttribute("head_text");
+        this.shadowRoot.querySelector(".information_body").innerHTML = this.getAttribute("sub_text");
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
