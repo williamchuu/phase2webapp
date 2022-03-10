@@ -8,9 +8,10 @@ template_score.innerHTML = `
 <style>
 .text {
    font-size: 20px;
-   font-weight: bold;
+   font-weight: 600;
    text-align: center;
    display:none;
+   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 </style>
 
@@ -35,24 +36,24 @@ class TheScore extends HTMLElement {
       this.shadowRoot.appendChild(template_score.content.cloneNode(true)); //use the template to make a clone
       // Display none because user does not have any score.
 
-      // If User is on homepage and has a score
+      // If User is on homepage and has a score, display it and change text accordingly 
       if (endScore > 1 && this.getAttribute("end") === "no") {
          this.shadowRoot.querySelector(".text").style.display = "block";
          this.shadowRoot.querySelector(".text").innerHTML = "Your current attempts is " + endScore + ".";
       }
       if (endScore > 20 && this.getAttribute("end") === "no") {
          this.shadowRoot.querySelector(".text").style.display = "block";
-         this.shadowRoot.querySelector(".text").innerHTML = "You have " + endScore + " attempts and haven't completed it? Seriously?";
+         this.shadowRoot.querySelector(".text").innerHTML = "You have " + endScore + " attempts and haven't completed it?";
       }
 
-      // Ending Score
+      // If User is done the quiz and has a score, change the text accordingly
       if (endScore > 1 && this.getAttribute("end") === "yes") {
          this.shadowRoot.querySelector(".text").style.display = "block";
          this.shadowRoot.querySelector(".text").innerHTML = "It took you " + endScore + " attempts to complete the quiz.";
       }
       if (endScore > 20 && this.getAttribute("end") === "yes") {
          this.shadowRoot.querySelector(".text").style.display = "block";
-         this.shadowRoot.querySelector(".text").innerHTML = "It really took you " + endScore + " attempts to complete this quiz? The quiz isn't really that hard.";
+         this.shadowRoot.querySelector(".text").innerHTML = "It really took you " + endScore + " attempts to complete this quiz?";
       }
    }
 

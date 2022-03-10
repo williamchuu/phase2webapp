@@ -8,11 +8,13 @@ template_text.innerHTML = `
     fontSize: 24px;
     font-weight:bold;
     text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 .information_body{
     fontSize: 18px;
     text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 </style>
 

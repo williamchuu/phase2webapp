@@ -57,13 +57,13 @@
 		</div>
 		<div class="badges">
 			<div class="row">
-				<the-badge name="food" end="yes"></the-badge>
-				<the-badge name="restaurant" end="yes"></the-badge>
-				<the-badge name="landfill" end="yes"></the-badge>
+				<the-badge name="food" end="yes" id="badgefood"></the-badge>
+				<the-badge name="restaurant" end="yes" id="badgerest"></the-badge>
+				<the-badge name="landfill" end="yes" id="badgeland"></the-badge>
 			</div>
 			<div class="row">
-				<the-badge name="trash" end="yes"></the-badge>
-				<the-badge name="label" end="yes"></the-badge>
+				<the-badge name="trash" end="yes" id="badgetrash"></the-badge>
+				<the-badge name="label" end="yes" id="badgelabel"></the-badge>
 			</div>
 		</div>
 		<br>
@@ -73,14 +73,30 @@
 		<div class='leave'>
 			<the-exit icon="exit"></the-exit>
 		</div>
-		
+
 
 	</div>
 
-	
+
 </body>
 </head>
 <script>
-	var endScore = parseInt(sessionStorage.getItem(0));
 	console.log(endScore)
+	setTimeout(function () {
+		setTimeout(function () {
+			document.querySelector(`#badgefood`).congratsFlip();
+		}, 100);
+		setTimeout(function () {
+			document.querySelector(`#badgerest`).congratsFlip();
+		}, 200);
+		setTimeout(function () {
+			document.querySelector(`#badgeland`).congratsFlip();
+		}, 300);
+		setTimeout(function () {
+			document.querySelector(`#badgetrash`).congratsFlip();
+		}, 400);
+		setTimeout(function () {
+			document.querySelector(`#badgelabel`).congratsFlip();
+		}, 500);
+	}, 500);
 </script>
