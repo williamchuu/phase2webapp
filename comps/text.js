@@ -15,6 +15,8 @@ template_text.innerHTML = `
     fontSize: 18px;
     text-align: left;
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    
 }
 </style>
 
