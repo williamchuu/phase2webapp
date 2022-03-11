@@ -24,7 +24,7 @@ template_quiz.innerHTML = `
     .quiz_card:hover{
         background-color: #CAA21D;
     }
-    
+
 </style>
 <div class="quiz_card">
     <div class="quiz_title">
@@ -72,11 +72,13 @@ class TheQuiz extends HTMLElement {
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
     correctAnswer(){
-        alert("answer correct");
+        this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/correct.svg">
+        `
     }
 
     wrongAnswer(){
-        alert("answer wrong");
+        this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/wrong.svg">
+        `
     }
 
 
