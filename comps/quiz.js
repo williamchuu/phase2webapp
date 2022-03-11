@@ -17,8 +17,8 @@ template_quiz.innerHTML = `
 
     .quiz_title{
         font-family: Roboto, Helvetica, Arial, sans-serif;
-        font-size: 10px;
-        padding: 20px 0px 0px 0px;
+        font-size: 16px;
+        padding: 16px 0px 0px 0px;
     }
     .quiz_title img {
         width:35%;
