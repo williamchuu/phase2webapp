@@ -6,7 +6,7 @@ template_button.innerHTML = `
 <style>
     .button {
         box-shadow: 2px 2px 10px rgba(10, 23, 34, 0.2);
-        padding: 15px; 
+        padding: 10px; 
         background-color:#F3CA40;
         border-radius: 20px;
         text-align: center;
@@ -15,7 +15,7 @@ template_button.innerHTML = `
 
     }
     .button_title {
-        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 24px;
 
     }

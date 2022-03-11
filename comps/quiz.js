@@ -12,11 +12,10 @@ template_quiz.innerHTML = `
         margin: 20px 10px 0px 0px;
         border-radius: 5px; 
         box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-        
     }
 
     .quiz_title{
-        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 16px;
         padding: 16px 0px 0px 0px;
     }
@@ -53,7 +52,7 @@ class TheQuiz extends HTMLElement {
         this.shadowRoot.appendChild(template_quiz.content.cloneNode(true)); //use the template to make a clone
         this.shadowRoot.querySelector(".quiz_title").innerHTML = this.getAttribute("quiz_title");
 
-        if (this.getAttribute("quiz_title") === "33.33%") {
+        if (this.getAttribute("quiz_title") === "Donate it") {
             this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
                 document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);

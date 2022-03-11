@@ -13,25 +13,25 @@ template_congrats.innerHTML = `
         height:25rem;
     }
     .congrats img {
-        width: 26rem;
+        width: 16rem;
     }
     .congrats_text {
-        font-weight: bolder;
-        font-size:1.2rem;
+        font-weight: bold;
+        font-size: 12px;
     }
     h1 {
         text-align: center;
-        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
     h2 {
-        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
 
     }
 </style>
 
 <div class="congrats">
-    <img src="img/boy_eat.svg">
+    <img src="img/boy_eat2.svg">
     <div class ="congrats_text">
     <h1>Congratulations!</h1>
     <h2>You're the Master of All.</h2>

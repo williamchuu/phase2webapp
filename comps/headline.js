@@ -9,13 +9,13 @@ template_headline.innerHTML = `
         align-items:center;
         flex-direction: column;
         width: 20rem;
-        margin-top:5rem;
+        margin-top: -2rem;
     }
     .headline img {
-        width: 18rem;
+        width: 16rem;
     }
     .headline_text {
-        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 24px;
         font-weight: bold;
         text-align:center;

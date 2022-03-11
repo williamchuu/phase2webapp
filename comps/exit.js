@@ -10,7 +10,7 @@ template_exit.innerHTML = `
         border-radius:50%;
         border:5px white solid;
         // background-color:black;
-
+        padding-bottom: -3rem;
     }
 
 </style>

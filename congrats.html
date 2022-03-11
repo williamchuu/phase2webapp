@@ -9,6 +9,12 @@
 	<script src="comps/score.js"></script>
 	<script src="comps/script.js"></script>
 	<style>
+
+		/* html, body {
+			margin: 0; 
+			height: 100%; 
+			overflow: hidden;
+		} */
 		body {
 			display: flex;
 			background-color: #5A5353;
@@ -27,26 +33,18 @@
 			align-items: center;
 			background-color: #5DB666;
 			border-radius: 10%;
-			padding: 100px;
+			padding: 80px;
+			padding-top: 10px;
 			max-width: 600px;
+			position: absolute;
 		}
 
 		.leave {
 			margin-top: 3rem;
 		}
 
-		.circle {
-			background-color: #F3CA40;
-			border-radius: 50%;
-			min-width: 400px;
-			min-height: 200px;
-			display: flex;
-			justify-content: center;
-
-		}
-
 		.badges {
-			margin-top: 10rem;
+			margin-top: -6rem;
 		}
 	</style>
 
@@ -55,6 +53,9 @@
 		<div class="circle">
 			<the-congrats></the-congrats>
 		</div>
+		<br>
+		<br>
+		<br>
 		<div class="badges">
 			<div class="row">
 				<the-badge name="food" end="yes" id="badgefood"></the-badge>
