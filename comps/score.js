@@ -11,7 +11,7 @@ template_score.innerHTML = `
    font-weight: 600;
    text-align: center;
    display:none;
-   font-family: Roboto, Helvetica, Arial, sans-serif;
+   font-family: 'Open Sans', sans-serif;
 }
 </style>
 

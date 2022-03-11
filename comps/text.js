@@ -8,13 +8,13 @@ template_text.innerHTML = `
     fontSize: 24px;
     font-weight:bold;
     text-align: left;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .information_body{
     fontSize: 18px;
     text-align: left;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     
 }

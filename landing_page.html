@@ -10,6 +10,11 @@
 	<script src="comps/score.js"></script>
 	<script src="comps/script.js"></script>
 	<style>
+		html, body {
+			margin: 0; 
+			height: 100%; 
+			overflow: hidden;
+		}
 		body {
 			display: flex;
 			flex-direction: column;
@@ -25,11 +30,14 @@
 		}
 
 		.begin {
-			margin-top: 10rem;
+			margin-top: 1rem;
 		}
 
 	</style>
-
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
 <body>
 	
 	<the-headline head_text="Before you throw away that lunch..."></the-headline>
@@ -45,11 +53,10 @@
 	</div>
 		<br>
 		<the-score end="no"></the-score>
+		<the-text head_text="Can you unlock all 5 badges?"></the-text>
 	<div class='begin'>
 		<the-button button_title="Start!"></the-button>
 	</div>
 
 
-
 </body>
-</head>
