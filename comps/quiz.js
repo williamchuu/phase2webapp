@@ -70,8 +70,21 @@ class TheQuiz extends HTMLElement {
                 // console.log(sessionStorage)
                 // set badge to true
                 document.food = true;
-                this.pageSwap();
+                setTimeout(function () {
+                    document.querySelector('.one').style.cssText = `
+                        opacity:0;`
+                        document.querySelector('.two').style.cssText += `
+                        display:flex; `
+                    setTimeout(function () {
+                        document.querySelector('.one').style.cssText = `
+                        display:none;`
+                        document.querySelector('.two').style.cssText += `
+                        opacity:100;
+                        `
+                    }, 1500);
+                }, 1000);
                 
+
             } 
         }
         else if (this.getAttribute("quiz_title") === "26%"){
@@ -91,8 +104,19 @@ class TheQuiz extends HTMLElement {
                 // console.log(sessionStorage)
                 // Set badge to true
                 document.rest = true;
-                this.pageSwap();
-                
+                setTimeout(function () {
+                    document.querySelector('.two').style.cssText = `
+                        opacity:0;`
+                        document.querySelector('.three').style.cssText += `
+                        display:flex; `
+                    setTimeout(function () {
+                        document.querySelector('.two').style.cssText = `
+                        display:none;`
+                        document.querySelector('.three').style.cssText += `
+                        opacity:100;
+                        `
+                    }, 1500);
+                }, 1000);
             }
 
         }
@@ -113,7 +137,19 @@ class TheQuiz extends HTMLElement {
                 // console.log(sessionStorage)
                 // set badge to true
                 document.land = true;
-                this.pageSwap();
+                setTimeout(function () {
+                    document.querySelector('.three').style.cssText = `
+                        opacity:0;`
+                        document.querySelector('.four').style.cssText += `
+                        display:flex; `
+                    setTimeout(function () {
+                        document.querySelector('.three').style.cssText = `
+                        display:none;`
+                        document.querySelector('.four').style.cssText += `
+                        opacity:100;
+                        `
+                    }, 1500);
+                }, 1000);
             }
         }
         else if (this.getAttribute("quiz_title") === "Recyclable rubbish"){
@@ -134,7 +170,19 @@ class TheQuiz extends HTMLElement {
                 console.log(sessionStorage)
                 // Set badge to true
                 document.trash = true;
-                this.pageSwap();
+                setTimeout(function () {
+                    document.querySelector('.four').style.cssText = `
+                        opacity:0;`
+                        document.querySelector('.five').style.cssText += `
+                        display:flex; `
+                    setTimeout(function () {
+                        document.querySelector('.four').style.cssText = `
+                        display:none;`
+                        document.querySelector('.five').style.cssText += `
+                        opacity:100;
+                        `
+                    }, 1500);
+                }, 1000);
             }
         }
         else if (this.getAttribute("quiz_title") === "Expiry-date"){
@@ -155,6 +203,17 @@ class TheQuiz extends HTMLElement {
                 // console.log(sessionStorage)
                 // Set badge to true
                 document.label = true;
+                setTimeout(function () {
+                    document.querySelector('.five').style.cssText = `
+                        opacity:0;`
+                    document.querySelector('.icon1').style.display = 'none'
+                    document.querySelector('.icon2').style.display = 'none'
+
+                    setTimeout(function () {
+                        document.querySelector('.five').style.cssText = `
+                        display:none;`
+                    }, 1500);
+                }, 1000);
                 this.pageSwap();
             }
         }
@@ -228,8 +287,8 @@ class TheQuiz extends HTMLElement {
                                 }, 500);
                                 setTimeout(function () {
                                     this.swapPage();
-                                }, 3000);
-                            }, 1400);
+                                }, 2500);
+                            }, 800);
                         }
                     }
                 }
