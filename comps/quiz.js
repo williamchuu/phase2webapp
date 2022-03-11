@@ -41,20 +41,20 @@ template_quiz.innerHTML = `
 class TheQuiz extends HTMLElement {
 
     //MUST HAVE - CREATE A CONSTRUCTOR TO DO INITAL ASSOCIATIONS
-    constructor(){
+    constructor() {
         super(); //pass on the HTMLElement super powers!
-        this.attachShadow({mode:"open"}) //Attach it to the shadowRoot
+        this.attachShadow({ mode: "open" }) //Attach it to the shadowRoot
 
         //To-do - CREATE THE STATES FOR THE UI HERE!
     }
 
     //MUST HAVE - FUNCTION THAT RUNS AFTER IT'S CONNECTED
-    connectedCallback(){
+    connectedCallback() {
         this.shadowRoot.appendChild(template_quiz.content.cloneNode(true)); //use the template to make a clone
         this.shadowRoot.querySelector(".quiz_title").innerHTML = this.getAttribute("quiz_title");
 
-        if (this.getAttribute("quiz_title") === "33.33%"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => {
+        if (this.getAttribute("quiz_title") === "33.33%") {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
                 document.querySelector('#badgefood').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgefood').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
@@ -73,22 +73,24 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.one').style.cssText = `
                         opacity:0;`
-                        document.querySelector('.two').style.cssText += `
-                        display:flex; `
                     setTimeout(function () {
                         document.querySelector('.one').style.cssText = `
                         display:none;`
                         document.querySelector('.two').style.cssText += `
+                        display:flex; `
+                    }, 1900);
+                    setTimeout(function () {
+                        document.querySelector('.two').style.cssText += `
                         opacity:100;
                         `
-                    }, 1500);
+                    }, 2000);
                 }, 1000);
-                
 
-            } 
+
+            }
         }
-        else if (this.getAttribute("quiz_title") === "26%"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => { 
+        else if (this.getAttribute("quiz_title") === "26%") {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
                 document.querySelector('#badgerest').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgerest').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
@@ -107,21 +109,22 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.two').style.cssText = `
                         opacity:0;`
-                        document.querySelector('.three').style.cssText += `
-                        display:flex; `
                     setTimeout(function () {
                         document.querySelector('.two').style.cssText = `
                         display:none;`
                         document.querySelector('.three').style.cssText += `
+                        display:flex; `
+                    }, 1900);
+                    setTimeout(function () {
+                        document.querySelector('.three').style.cssText += `
                         opacity:100;
                         `
-                    }, 1500);
+                    }, 2000);
                 }, 1000);
             }
-
         }
-        else if (this.getAttribute("quiz_title") === "A plastic bag"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => {
+        else if (this.getAttribute("quiz_title") === "A plastic bag") {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
                 document.querySelector('#badgeland').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgeland').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
@@ -140,8 +143,10 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.three').style.cssText = `
                         opacity:0;`
+                    setTimeout(function () {
                         document.querySelector('.four').style.cssText += `
-                        display:flex; `
+                            display:flex; `
+                    }, 1500);
                     setTimeout(function () {
                         document.querySelector('.three').style.cssText = `
                         display:none;`
@@ -152,9 +157,8 @@ class TheQuiz extends HTMLElement {
                 }, 1000);
             }
         }
-        else if (this.getAttribute("quiz_title") === "Recyclable rubbish"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => 
-            {
+        else if (this.getAttribute("quiz_title") === "Recyclable rubbish") {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
                 document.querySelector('#badgetrash').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgetrash').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
@@ -173,8 +177,10 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.four').style.cssText = `
                         opacity:0;`
+                    setTimeout(function () {
                         document.querySelector('.five').style.cssText += `
-                        display:flex; `
+                            display:flex; `
+                    }, 1500);
                     setTimeout(function () {
                         document.querySelector('.four').style.cssText = `
                         display:none;`
@@ -185,11 +191,10 @@ class TheQuiz extends HTMLElement {
                 }, 1000);
             }
         }
-        else if (this.getAttribute("quiz_title") === "Expiry-date"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => 
-            {
+        else if (this.getAttribute("quiz_title") === "Expiry-date") {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 this.correctAnswer();
-            document.querySelector('#badgelabel').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
+                document.querySelector('#badgelabel').changeBadgeFront(`./img/badge_${this.getAttribute('button_answer')}.svg`);
                 document.querySelector('#badgelabel').changeBadgeBack(`./img/badge_${this.getAttribute('button_answer')}_m.svg`);
                 // to initialize endScore as a number because numbers cannot be added to undefined
                 if (isNaN(endScore)) {
@@ -208,7 +213,6 @@ class TheQuiz extends HTMLElement {
                         opacity:0;`
                     document.querySelector('.icon1').style.display = 'none'
                     document.querySelector('.icon2').style.display = 'none'
-
                     setTimeout(function () {
                         document.querySelector('.five').style.cssText = `
                         display:none;`
@@ -219,7 +223,7 @@ class TheQuiz extends HTMLElement {
         }
 
         else {
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => {
+            this.shadowRoot.querySelector(".quiz_card").onclick = () => {
                 if (isNaN(endScore)) {
                     endScore = 1;
                 }
@@ -234,18 +238,18 @@ class TheQuiz extends HTMLElement {
     }
 
 
-    
+
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!
-    correctAnswer(){
+    correctAnswer() {
         this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/correct.svg">
         `
         this.shadowRoot.querySelector(".quiz_title").style.cssText = `
         padding:0px;
-        `; 
+        `;
     }
 
-    wrongAnswer(){
+    wrongAnswer() {
         this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/wrong.svg">
         `
         this.shadowRoot.querySelector(".quiz_title").style.cssText = `
