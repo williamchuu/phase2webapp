@@ -5,7 +5,6 @@ var template_vector = document.createElement("template"); //<template> </templat
 template_vector.innerHTML = `
 <style>
 
-
     .vectors {
         width: 13rem;
         height: 13rem;
