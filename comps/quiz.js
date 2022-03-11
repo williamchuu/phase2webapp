@@ -143,10 +143,10 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.three').style.cssText = `
                         opacity:0;`
-                        setTimeout(function () {
-                            document.querySelector('.four').style.cssText += `
+                    setTimeout(function () {
+                        document.querySelector('.four').style.cssText += `
                             display:flex; `
-                        }, 1500);
+                    }, 1500);
                     setTimeout(function () {
                         document.querySelector('.three').style.cssText = `
                         display:none;`
@@ -177,10 +177,10 @@ class TheQuiz extends HTMLElement {
                 setTimeout(function () {
                     document.querySelector('.four').style.cssText = `
                         opacity:0;`
-                        setTimeout(function () {
-                            document.querySelector('.five').style.cssText += `
+                    setTimeout(function () {
+                        document.querySelector('.five').style.cssText += `
                             display:flex; `
-                        }, 1500);
+                    }, 1500);
                     setTimeout(function () {
                         document.querySelector('.four').style.cssText = `
                         display:none;`
@@ -213,7 +213,6 @@ class TheQuiz extends HTMLElement {
                         opacity:0;`
                     document.querySelector('.icon1').style.display = 'none'
                     document.querySelector('.icon2').style.display = 'none'
-
                     setTimeout(function () {
                         document.querySelector('.five').style.cssText = `
                         display:none;`
