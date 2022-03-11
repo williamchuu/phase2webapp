@@ -5,7 +5,7 @@ var template_quiz = document.createElement("template"); //<template> </template>
 template_quiz.innerHTML = `
 <style>
     .quiz_card {
-        background-color: #FFFFF;
+        background-color: #FFFFFF;
         width: 150px;
         height: 50px;
         text-align: center;
@@ -19,6 +19,9 @@ template_quiz.innerHTML = `
         font-family: Roboto, Helvetica, Arial, sans-serif;
         font-size: 10px;
         padding: 20px 0px 0px 0px;
+    }
+    .quiz_title img {
+        width:35%;
     }
 
     .quiz_card:hover{
@@ -50,19 +53,23 @@ class TheQuiz extends HTMLElement {
         this.shadowRoot.appendChild(template_quiz.content.cloneNode(true)); //use the template to make a clone
         this.shadowRoot.querySelector(".quiz_title").innerHTML = this.getAttribute("quiz_title");
 
-        if (this.getAttribute("quiz_title") === "A"){
+        if (this.getAttribute("quiz_title") === "33.33%"){
             this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
         }
-        
-        else if (this.getAttribute("quiz_title") === "B"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
+        else if (this.getAttribute("quiz_title") === "26%"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
         }
-        
-        else if (this.getAttribute("quiz_title") === "C"){
-            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
+        else if (this.getAttribute("quiz_title") === "A Plastic Bag"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
         }
-        
-        else if (this.getAttribute("quiz_title") === "D"){
+        else if (this.getAttribute("quiz_title") === "Recyclable Rubbish"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
+        }
+        else if (this.getAttribute("quiz_title") === "Expiry-Date"){
+            this.shadowRoot.querySelector(".quiz_card").onclick =() => this.correctAnswer();
+        }
+
+        else {
             this.shadowRoot.querySelector(".quiz_card").onclick =() => this.wrongAnswer();
         }
     }
@@ -74,10 +81,16 @@ class TheQuiz extends HTMLElement {
     correctAnswer(){
         this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/correct.svg">
         `
+        this.shadowRoot.querySelector(".quiz_title").style.cssText = `
+        padding:0px;
+        `; 
     }
 
     wrongAnswer(){
         this.shadowRoot.querySelector(".quiz_title").innerHTML = ` <img src="img/wrong.svg">
+        `
+        this.shadowRoot.querySelector(".quiz_title").style.cssText = `
+        padding:0px;
         `
     }
 
