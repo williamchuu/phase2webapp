@@ -11,6 +11,23 @@
 	<script src="comps/text.js"></script>
 	<script src="comps/script.js"></script>
 	<script src="comps/score.js"></script>
+	<script type="text/javascript">
+        window.onload = fadeIn;
+  
+        function fadeIn() {
+            var fade = document.getElementById("1");
+            var opacity = 0;
+            var intervalID = setInterval(function() {
+  
+                if (opacity < 1) {
+                    opacity = opacity + 0.1
+                    fade.style.opacity = opacity;
+                } else {
+                    clearInterval(intervalID);
+                }
+            }, 150);
+        }
+    </script>
 	<style>
 		body {
 			display: flex;
@@ -52,12 +69,13 @@
 			padding-top: 80px;
 			width: 35rem;
 		}
+		
 	</style>
 </head>
 
 <body>
 
-	<body>
+	<body id="body">
 		<div class="badgebar">
 			<the-badge name="food" id='badgefood' class="badges"></the-badge>
 			<the-badge name="restaurant" id='badgerest' class="badges"></the-badge>
@@ -68,7 +86,7 @@
 		<the-exit icon="back" class="back"></the-exit>
 
 		<div class="quiz">
-			<div class="section">
+			<div class="section" id="1" style="opacity:1">
 				<the-vector class="saladicon" pic="salad"></the-vector>
 				<the-text head_text="Food Waste"
 					sub_text="There is about 1/3 of all food produced being wasted every year, which is about 1.3 billion tonnes of food. However, there are still about seven hundred million of people sufffering from starvation.">
@@ -78,7 +96,7 @@
 				<the-button button_title="a" button_answer="food"></the-button>
 			</div>
 
-			<div class="section">
+			<div class="section" id="2" style="opacity:0;">
 				<the-vector class="restauranticon" pic="restaurant"></the-vector>
 				<the-text head_text="Restaurant Waste"
 					sub_text="Of all the food waste, approximately 61% of food are from families, 26% are from restaurants, and 11% are from retailers. ">
@@ -88,7 +106,7 @@
 				<the-button button_title="b" button_answer="restaurant"></the-button>
 			</div>
 
-			<div class="section">
+			<div class="section" id="3" style="opacity:0;">
 				<the-vector class="landfillicon" pic="landfill"></the-vector>
 				<the-text head_text="Landfill Decomposing"
 					sub_text="Composing is one of few ways to minimize waste. It can take from hundreds to thousands of years for a plastic bag to decompose naturally.">
@@ -99,7 +117,7 @@
 				<the-button button_title="c" button_answer="landfill"></the-button>
 			</div>
 
-			<div class="section">
+			<div class="section" id="4" style="opacity:0;">
 				<the-vector class="trashicon" pic="trash"></the-vector>
 				<the-text head_text="Waste Categories"
 					sub_text="Waste can be classified into five types of waste: liquid waste, solid rubbish, organic waste, recyclable rubbish and hazardous waste.">
@@ -108,7 +126,7 @@
 				<the-button button_title="d" button_answer="trash"></the-button>
 			</div>
 
-			<div class="section">
+			<div class="section" id="5" style="opacity:0;">
 				<the-vector class="jaricon" pic="jar"></the-vector>
 				<the-text head_text="Expire/Best Before Date"
 					sub_text="The most common reason people throw out food is because people confuse the labels: “Best before”, “Expires on”, and “Open date”. Many people throw away the food when it has passed the “Best before” date, but they are still edible.">
