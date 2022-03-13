@@ -27,7 +27,7 @@
 				} else {
 					clearInterval(intervalID);
 				}
-			}, 100);
+			}, 10);
 		}
 	</script>
 	<style>
@@ -71,7 +71,7 @@
 			padding-top: 100px;
 			padding-bottom: 100px;
 			margin-top: 20px;
-			transition: 2s;
+			transition: 1.5s;
 		}
 
 		.quiz {
@@ -81,20 +81,18 @@
 			padding-top: 20px;
 			width: 40rem;
 		}
+		.quiz_grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		/* max-width: 100px; */
+		margin: -20px 10px 40px 10px;
+	}
 	</style>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@300&display=swap"
 		rel="stylesheet">
 </head>
-<style>
-	.quiz_grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		/* max-width: 100px; */
-		margin: -20px 10px 40px 10px;
-	}
-</style>
 
 <body>
 
@@ -114,8 +112,7 @@
 				<the-text head_text="Food Waste"
 					sub_text="58% of food produced in Canada is lost or wasted each year. That equals to 35.5 million tonnes of food being wasted per year.">
 				</the-text>
-				<the-text head_text="Question #1 :" sub_text="What is the best way to prevent food waste?
-				">
+				<the-text head_text="Question #1 :" sub_text="What is the best way to prevent food waste?">
 				</the-text>
 				<div class="quiz_grid">
 					<the-quiz quiz_title="Donate it" button_answer="food"></the-quiz>
@@ -186,10 +183,7 @@
 				</div>
 			</div>
 
-
 		</div>
-
-
 
 	</body>
 

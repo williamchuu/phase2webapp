@@ -77,12 +77,12 @@ class TheQuiz extends HTMLElement {
                         display:none;`
                         document.querySelector('.two').style.cssText += `
                         display:flex; `
-                    }, 1900);
+                    }, 1300);
                     setTimeout(function () {
                         document.querySelector('.two').style.cssText += `
                         opacity:100;
                         `
-                    }, 2000);
+                    }, 1310);
                 }, 1000);
 
 
@@ -113,12 +113,12 @@ class TheQuiz extends HTMLElement {
                         display:none;`
                         document.querySelector('.three').style.cssText += `
                         display:flex; `
-                    }, 1900);
+                    }, 1300);
                     setTimeout(function () {
                         document.querySelector('.three').style.cssText += `
                         opacity:100;
                         `
-                    }, 2000);
+                    }, 1310);
                 }, 1000);
             }
         }
@@ -145,14 +145,14 @@ class TheQuiz extends HTMLElement {
                     setTimeout(function () {
                         document.querySelector('.four').style.cssText += `
                             display:flex; `
-                    }, 1500);
+                    }, 1300);
                     setTimeout(function () {
                         document.querySelector('.three').style.cssText = `
                         display:none;`
                         document.querySelector('.four').style.cssText += `
                         opacity:100;
                         `
-                    }, 1500);
+                    }, 1310);
                 }, 1000);
             }
         }
@@ -179,14 +179,14 @@ class TheQuiz extends HTMLElement {
                     setTimeout(function () {
                         document.querySelector('.five').style.cssText += `
                             display:flex; `
-                    }, 1500);
+                    }, 1300);
                     setTimeout(function () {
                         document.querySelector('.four').style.cssText = `
                         display:none;`
                         document.querySelector('.five').style.cssText += `
                         opacity:100;
                         `
-                    }, 1500);
+                    }, 1310);
                 }, 1000);
             }
         }
@@ -215,7 +215,7 @@ class TheQuiz extends HTMLElement {
                     setTimeout(function () {
                         document.querySelector('.five').style.cssText = `
                         display:none;`
-                    }, 1500);
+                    }, 1300);
                 }, 1000);
                 this.pageSwap();
             }
