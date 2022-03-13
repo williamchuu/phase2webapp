@@ -17,7 +17,7 @@ template_badge.innerHTML = `
     }
 
     #badge {
-        transition: 1s ease;
+        transition: 1.1s ease;
         transform-style: preserve-3d;
         position: relative;
     }
