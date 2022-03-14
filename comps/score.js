@@ -41,7 +41,7 @@ class TheScore extends HTMLElement {
          this.shadowRoot.querySelector(".text").style.display = "block";
          this.shadowRoot.querySelector(".text").innerHTML = "Your current attempts is " + endScore + ".";
       }
-      if (endScore > 20 && this.getAttribute("end") === "no") {
+      else if (endScore > 20 && this.getAttribute("end") === "no") {
          this.shadowRoot.querySelector(".text").style.display = "block";
          this.shadowRoot.querySelector(".text").innerHTML = "You have " + endScore + " attempts and haven't completed it?";
       }
@@ -53,11 +53,15 @@ class TheScore extends HTMLElement {
       }
       if (endScore === 5 && this.getAttribute("end") === "yes") {
          this.shadowRoot.querySelector(".text").style.display = "block";
-         this.shadowRoot.querySelector(".text").innerHTML = "Congrats! You got none of the questions wrong!";
+         this.shadowRoot.querySelector(".text").innerHTML = "Congrats! You got none of the questions wrong! You deserve a medal.";
       }
       if (endScore > 20 && this.getAttribute("end") === "yes") {
          this.shadowRoot.querySelector(".text").style.display = "block";
          this.shadowRoot.querySelector(".text").innerHTML = "It really took you " + endScore + " attempts to complete this quiz?";
+      }
+      if (endScore > 50 && this.getAttribute("end") === "yes") {
+         this.shadowRoot.querySelector(".text").style.display = "block";
+         this.shadowRoot.querySelector(".text").innerHTML = "Really good job! It took you " + endScore + " attempts to complete this quiz!";
       }
    }
 

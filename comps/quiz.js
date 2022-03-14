@@ -82,7 +82,7 @@ class TheQuiz extends HTMLElement {
                         document.querySelector('.two').style.cssText += `
                         opacity:100;
                         `
-                    }, 1310);
+                    }, 1320);
                 }, 1000);
 
 
@@ -118,7 +118,7 @@ class TheQuiz extends HTMLElement {
                         document.querySelector('.three').style.cssText += `
                         opacity:100;
                         `
-                    }, 1310);
+                    }, 1320);
                 }, 1000);
             }
         }
@@ -152,7 +152,7 @@ class TheQuiz extends HTMLElement {
                         document.querySelector('.four').style.cssText += `
                         opacity:100;
                         `
-                    }, 1310);
+                    }, 1320);
                 }, 1000);
             }
         }
@@ -186,7 +186,7 @@ class TheQuiz extends HTMLElement {
                         document.querySelector('.five').style.cssText += `
                         opacity:100;
                         `
-                    }, 1310);
+                    }, 1320);
                 }, 1000);
             }
         }
