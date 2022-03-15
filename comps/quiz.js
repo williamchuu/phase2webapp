@@ -26,6 +26,7 @@ template_quiz.innerHTML = `
     .quiz_card:hover{
         background-color: #CAA21D;
     }
+    
 
 </style>
 <div class="quiz_card">
