@@ -13,6 +13,7 @@
 	<script src="comps/questions.js"></script>
 	<script src="comps/script.js"></script>
 	<script src="comps/score.js"></script>
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<script type="text/javascript">
 		window.onload = fadeIn;
 
@@ -87,6 +88,17 @@
 		grid-template-columns: repeat(2, 1fr);
 		/* max-width: 100px; */
 		margin: -20px 10px 40px 10px;
+	}
+
+	@media screen and (max-width:700px) {
+		#body {
+			width: 100%;
+		}
+		.section {
+			width: 50%;
+		}
+		
+
 	}
 	</style>
 	<link rel="preconnect" href="https://fonts.googleapis.com">

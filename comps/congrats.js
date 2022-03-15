@@ -26,7 +26,6 @@ template_congrats.innerHTML = `
     h2 {
         font-family: 'Open Sans', sans-serif;
         text-align: center;
-
     }
 </style>
 

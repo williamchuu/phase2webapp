@@ -32,6 +32,11 @@ template_badge.innerHTML = `
     #badge-back {
         transform: rotateY(180deg);
     }
+    @media screen and (max-width:600px) {
+		#badge-container, #badge-front, #badge-back {
+			width: 5rem;
+		}
+	}
 </style>
 
 <div id="badge-container">
@@ -69,6 +74,21 @@ class TheBadge extends HTMLElement {
             this.shadowRoot.querySelector("#badge-front").src = this.changeBadgeFront(`./img/badge_${this.getAttribute('name')}.svg`);
             this.shadowRoot.querySelector("#badge-back").src = this.changeBadgeBack(`./img/badge_${this.getAttribute('name')}_m.svg`);
         }
+        if (window.matchMedia("(max-width: 700px") && this.getAttribute("end") === "yes") {
+            this.shadowRoot.querySelector("#badge-front").style.width = '7rem'
+            this.shadowRoot.querySelector("#badge-back").style.width = '7rem'
+            this.shadowRoot.querySelector("#badge-container").style.width = '7rem'
+        }
+        else if (window.matchMedia("(max-width: 700px") && this.getAttribute("end") === "no") {
+            this.shadowRoot.querySelector("#badge-front").style.width = '7rem';
+            this.shadowRoot.querySelector("#badge-back").style.width = '7rem';
+            this.shadowRoot.querySelector("#badge-container").style.width = '7rem';
+            this.shadowRoot.querySelector("#badge-front").style.height = '6.5rem';
+            this.shadowRoot.querySelector("#badge-back").style.height = '6.5rem';
+            this.shadowRoot.querySelector("#badge-container").style.height = '6.5rem';
+        }
+        
+        
     }
 
     //To-do - CREATE THE FUNCTIONALITIES HERE!

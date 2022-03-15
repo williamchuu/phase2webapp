@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Before You Throw Away That Lunch</title>
+    <script src="comps/badges.js"></script>
+    <script src="comps/headline.js"></script>
+    <script src="comps/button.js"></script>
+    <script src="comps/text.js"></script>
+    <script src="comps/score.js"></script>
+    <script src="comps/script.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5db666;
+        background: url("img/bg_pattern.svg");
+        margin: auto;
+        padding: 50px;
+      }
 
-<head>
-	<title>Before You Throw Away That Lunch</title>
-	<script src="comps/badges.js"></script>
-	<script src="comps/headline.js"></script>
-	<script src="comps/button.js"></script>
-	<script src="comps/text.js"></script>
-	<script src="comps/score.js"></script>
-	<script src="comps/script.js"></script>
-	<style>
-		html, body {
-			margin: 0; 
-			height: 100%; 
-			overflow: hidden;
+      .row {
+        display: flex;
+        justify-content: center;
+      }
+
+      .begin {
+        margin-top: 1rem;
+      }
+		@media screen and (max-width:700px) {
+		.badge_grid {
+			width: 100%;
 		}
-		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			background-color: #5DB666;
-			background: url("img/bg_pattern.svg");
-			margin: auto;
-			padding: 50px;
-		}
-
-		.row {
-			display: flex;
-			align-items: center;
-		}
-
-		.begin {
-			margin-top: 1rem;
-		}
-
-	</style>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-	
-	<the-headline head_text="Before you throw away that lunch..."></the-headline>
-	<br>
-	<div class="row">
-		<the-badge badge="food"></the-badge>
-		<the-badge badge="restaurants"></the-badge>
-		<the-badge badge="landfills"></the-badge>
-	</div>
-	<div class="row">
-		<the-badge badge="trash"></the-badge>
-		<the-badge badge="labels"></the-badge>
-	</div>
-		<br>
-		<the-score end="no"></the-score>
-		<the-text head_text="Can you unlock all 5 badges?"></the-text>
-	<div class='begin'>
-		<the-button button_title="Start!"></the-button>
-	</div>
-
-
-</body>
+	}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <the-headline
+      head_text="Before you throw away that lunch..."
+    ></the-headline>
+    <br />
+    <div class="badge_grid">
+      <div class="row">
+        <the-badge badge="food" end="no"></the-badge>
+        <the-badge badge="restaurants" end="no"></the-badge>
+        <the-badge badge="landfills" end="no"></the-badge>
+      </div>
+      <div class="row">
+        <the-badge badge="trash" end="no"></the-badge>
+        <the-badge badge="labels" end="no"></the-badge>
+      </div>
+    </div>
+    <br />
+    <the-score end="no"></the-score>
+    <the-text head_text="Can you unlock all 5 badges?"></the-text>
+    <div class="begin">
+      <the-button button_title="Start!"></the-button>
+    </div>
+  </body>
+</html>
